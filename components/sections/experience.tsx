@@ -8,7 +8,6 @@ import { OdooDashboardUI } from '@/components/sections/project-uis';
 function ExperienceCard({
   item,
   index,
-  lang,
   illustrativeLabel,
 }: {
   item: {
@@ -21,12 +20,10 @@ function ExperienceCard({
     tech: string[];
   };
   index: number;
-  lang: 'fr' | 'en';
   illustrativeLabel: string;
 }) {
   const lineRef = useRef<HTMLDivElement>(null);
   const isDarbTech = item.company === 'DarbTech';
-  const currentLabel = lang === 'fr' ? 'En cours' : 'Current';
 
   return (
     <motion.div
@@ -40,12 +37,6 @@ function ExperienceCard({
         {/* Period */}
         <div className="lg:col-span-2">
           <div className="text-base font-mono-tnum text-slate">{item.period}</div>
-          {isDarbTech && (
-            <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-clean-blue/20 bg-soft-blue/60 px-3 py-1.5 text-sm font-medium text-clean-blue">
-              <span className="h-2 w-2 rounded-full bg-clean-blue motion-safe:animate-pulse" />
-              {currentLabel}
-            </div>
-          )}
         </div>
 
         {/* Main content */}
@@ -108,7 +99,7 @@ function ExperienceCard({
 }
 
 export default function Experience() {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section id="experience" className="relative w-full bg-white py-24 md:py-32">
@@ -132,7 +123,7 @@ export default function Experience() {
 
         <div className="border-b border-soft">
           {t.experience.items.map((item, i) => (
-            <ExperienceCard key={item.company} item={item} index={i} lang={lang} illustrativeLabel={t.work.illustrativeLabel} />
+            <ExperienceCard key={item.company} item={item} index={i} illustrativeLabel={t.work.illustrativeLabel} />
           ))}
         </div>
       </div>

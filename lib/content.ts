@@ -274,9 +274,9 @@ export const content: Record<Language, Content> = {
       items: [
         {
           company: 'DarbTech',
-          role: 'Stage de fin d\'études — En cours',
-          location: 'Rabat, Maroc · Avril 2026 à aujourd’hui',
-          period: 'Avril 2026 — Aujourd’hui',
+          role: 'Stage de fin d\'études',
+          location: 'Rabat, Maroc · Avril 2026 — Septembre 2026',
+          period: 'Avril 2026 — Septembre 2026',
           content:
             "Contribution à des projets Odoo incluant la personnalisation de modules, l'intégration d'un assistant conversationnel basé sur l'IA, le traitement et la structuration de données ainsi que la migration vers Odoo SaaS.",
           contentEn:
@@ -549,9 +549,9 @@ export const content: Record<Language, Content> = {
       items: [
         {
           company: 'DarbTech',
-          role: 'Graduation Internship — Current',
-          location: 'Rabat, Morocco · April 2026 to Present',
-          period: 'April 2026 — Present',
+          role: 'Graduation Internship',
+          location: 'Rabat, Morocco · April 2026 — September 2026',
+          period: 'April 2026 — September 2026',
           content:
             'Contributed to Odoo ERP development projects, including module customization, implementation of an AI powered conversational assistant, data processing and structuring, and data migration to Odoo SaaS within an Agile environment.',
           contentEn:
