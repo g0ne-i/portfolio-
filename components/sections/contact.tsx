@@ -77,7 +77,7 @@ export default function Contact() {
                 {t.contact.emailBtn}
               </a>
               <a
-                href="https://www.linkedin.com/in/ismail_ourdou"
+                href="https://www.linkedin.com/in/ismail-ourdou/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-soft px-5 py-2.5 text-sm font-medium text-navy transition-all hover:border-clean-blue hover:text-clean-blue"
