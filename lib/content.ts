@@ -304,7 +304,7 @@ export const content: Record<Language, Content> = {
       timeline: [
         { year: '2023–2025', label: 'DUT Génie Informatique', labelEn: 'DUT Computer Engineering' },
         { year: '2025–2026', label: 'BUT Big Data & IA', labelEn: 'BUT Big Data & Artificial Intelligence' },
-        { year: '2026', label: 'Développement ERP & IA', labelEn: 'ERP & AI Development' },
+        { year: '2026', label: 'Développement logiciel & IA', labelEn: 'Software & AI Development' },
       ],
       description:
         "Un parcours guidé par la volonté de relier les systèmes métier à l'intelligence artificielle.",
@@ -579,7 +579,7 @@ export const content: Record<Language, Content> = {
       timeline: [
         { year: '2023–2025', label: 'DUT Computer Engineering', labelEn: 'DUT Génie Informatique' },
         { year: '2025–2026', label: 'BUT Big Data & AI', labelEn: 'BUT Big Data & IA' },
-        { year: '2026', label: 'ERP & AI Development', labelEn: 'ERP & AI Development' },
+        { year: '2026', label: 'Software & AI Development', labelEn: 'Développement logiciel & IA' },
       ],
       description:
         'A journey driven by the will to connect business systems with artificial intelligence.',
