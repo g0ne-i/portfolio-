@@ -128,7 +128,7 @@ export const content: Record<Language, Content> = {
       talk: "Discutons ↗",
     },
     hero: {
-      label: 'DÉVELOPPEUR ERP & IA JUNIOR',
+      label: 'DÉVELOPPEUR LOGICIEL & IA JUNIOR',
       headlinePrefix: 'Je construis des systèmes qui transforment la',
       headlineComplexity: 'complexité',
       headlineArrow: 'en',
@@ -407,7 +407,7 @@ export const content: Record<Language, Content> = {
       talk: "Let's talk ↗",
     },
     hero: {
-      label: 'JUNIOR ERP & AI DEVELOPER',
+      label: 'JUNIOR SOFTWARE & AI DEVELOPER',
       headlinePrefix: 'I build systems that turn',
       headlineComplexity: 'complexity',
       headlineArrow: 'into',

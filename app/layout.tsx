@@ -22,7 +22,7 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Ismail Ourdou',
-  jobTitle: 'Junior ERP & AI Developer',
+  jobTitle: 'Junior Software & AI Developer',
   email: 'mailto:ismailourdou123@gmail.com',
   telephone: '+212610692362',
   url: siteUrl,
@@ -36,12 +36,12 @@ const personJsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Ismail Ourdou — Junior ERP & AI Developer',
+  title: 'Ismail Ourdou — Junior Software & AI Developer',
   description:
     'Portfolio of Ismail Ourdou, a junior developer specializing in ERP, Odoo, artificial intelligence, automation, and web development.',
   keywords: ['Ismail Ourdou', 'ERP', 'Odoo', 'AI', 'Artificial Intelligence', 'Automation', 'Next.js', 'React', 'Rabat'],
   openGraph: {
-    title: 'Ismail Ourdou — Junior ERP & AI Developer',
+    title: 'Ismail Ourdou — Junior Software & AI Developer',
     description:
       'Portfolio of Ismail Ourdou, Junior Developer specializing in ERP, Odoo, artificial intelligence, automation and web development.',
     type: 'website',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ismail Ourdou — Junior ERP & AI Developer',
+    title: 'Ismail Ourdou — Junior Software & AI Developer',
     description: 'ERP, Odoo, artificial intelligence, automation and web development.',
     images: [portraitUrl],
   },
