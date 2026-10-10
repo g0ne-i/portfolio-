@@ -86,7 +86,7 @@ export default function Hero() {
               <a href="#work" className="group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-medium text-white transition-all hover:gap-3 hover:bg-deep-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clean-blue focus-visible:ring-offset-2">
                 {t.hero.projects}<ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
-              <a href={withBasePath('/cv/OURDOU_Ismail-CV-en.pdf?v=2026-10-10')} download className="group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-soft px-6 py-3 text-sm font-medium text-navy transition-colors hover:border-clean-blue hover:text-clean-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clean-blue focus-visible:ring-offset-2">
+              <a href={withBasePath('/cv/OURDOU_Ismail-CV-en.pdf?v=2026-10-10-2')} download className="group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-soft px-6 py-3 text-sm font-medium text-navy transition-colors hover:border-clean-blue hover:text-clean-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clean-blue focus-visible:ring-offset-2">
                 {t.hero.downloadCV}<Download className="h-4 w-4" />
               </a>
             </motion.div>

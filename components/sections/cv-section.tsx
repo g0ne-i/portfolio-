@@ -37,7 +37,7 @@ function CVPaper({ lang }: { lang: 'fr' | 'en' }) {
         className="relative aspect-[1/1.414] overflow-hidden rounded-sm bg-white shadow-2xl shadow-clean-blue/10"
       >
         <Image
-          src={withBasePath('/images/cv-preview.png?v=2026-10-10')}
+          src={withBasePath('/images/cv-preview.png?v=2026-10-10-2')}
           alt={lang === 'fr' ? "Aperçu du CV d’Ismail Ourdou" : "Preview of Ismail Ourdou's CV"}
           width={894}
           height={1264}
@@ -108,7 +108,7 @@ export default function CVSection() {
               className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
             >
               <a
-                href={withBasePath('/cv/OURDOU_Ismail-CV-en.pdf?v=2026-10-10')}
+                href={withBasePath('/cv/OURDOU_Ismail-CV-en.pdf?v=2026-10-10-2')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-soft px-6 py-3 text-sm font-medium text-navy transition-all duration-300 hover:border-clean-blue hover:text-clean-blue sm:w-auto"
@@ -117,7 +117,7 @@ export default function CVSection() {
                 <ExternalLink className="w-4 h-4" />
               </a>
               <a
-                href={withBasePath('/cv/OURDOU_Ismail-CV-en.pdf?v=2026-10-10')}
+                href={withBasePath('/cv/OURDOU_Ismail-CV-en.pdf?v=2026-10-10-2')}
                 download
                 className="group inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-deep-blue sm:w-auto"
               >

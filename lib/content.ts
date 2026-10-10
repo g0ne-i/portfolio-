@@ -154,14 +154,14 @@ export const content: Record<Language, Content> = {
           id: 'documind',
           number: '01',
           kind: 'freelance',
-          category: 'IA · Traitement documentaire · Application web',
+          category: 'IA · Extraction PDF · Données structurées',
           name: 'Documind.com',
-          subtitle: 'Gestion documentaire intelligente',
+          subtitle: 'Tableau de bord IA pour documents',
           description:
-            "Développement d'une application web d'analyse documentaire intégrant un pipeline RAG asynchrone pour ingérer des PDF, extraire automatiquement les données et automatiser les workflows de traitement.",
+            "Développement d'un tableau de bord piloté par l'IA qui élimine l'analyse manuelle des documents en lisant automatiquement le texte brut des PDF importés et en l'organisant sous forme d'enregistrements structurés dans une base de données.",
           descriptionEn:
-            'Developed a web-based document analysis application featuring an asynchronous RAG pipeline to ingest PDFs, execute automatic data extraction, and automate processing workflows.',
-          tech: ['Next.js', 'Python', 'MySQL', 'GCP', 'RAG'],
+            'Developed an AI-driven dashboard that eliminates manual document scanning by automatically reading raw text from uploaded PDFs and organizing it into structured database records.',
+          tech: ['Next.js', 'Python', 'MySQL', 'GCP'],
           url: 'https://documind.delrio-lawoffice.com/',
         },
         {
@@ -419,14 +419,14 @@ export const content: Record<Language, Content> = {
           id: 'documind',
           number: '01',
           kind: 'freelance',
-          category: 'AI · Document Processing · Web Application',
+          category: 'AI · PDF Extraction · Structured Data',
           name: 'Documind.com',
-          subtitle: 'Intelligent document management',
+          subtitle: 'AI document processing dashboard',
           description:
-            'Developed a web-based document analysis application featuring an asynchronous RAG pipeline to ingest PDFs, execute automatic data extraction, and automate processing workflows.',
+            'Developed an AI-driven dashboard that eliminates manual document scanning by automatically reading raw text from uploaded PDFs and organizing it into structured database records.',
           descriptionEn:
-            "Développement d'une application web d'analyse documentaire intégrant un pipeline RAG asynchrone pour ingérer des PDF, extraire automatiquement les données et automatiser les workflows de traitement.",
-          tech: ['Next.js', 'Python', 'MySQL', 'GCP', 'RAG'],
+            "Développement d'un tableau de bord piloté par l'IA qui élimine l'analyse manuelle des documents en lisant automatiquement le texte brut des PDF importés et en l'organisant sous forme d'enregistrements structurés dans une base de données.",
+          tech: ['Next.js', 'Python', 'MySQL', 'GCP'],
           url: 'https://documind.delrio-lawoffice.com/',
         },
         {
