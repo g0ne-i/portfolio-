@@ -27,6 +27,15 @@ const personJsonLd = {
   telephone: '+212610692362',
   url: siteUrl,
   image: portraitUrl,
+  sameAs: [
+    'https://www.linkedin.com/in/ismail-ourdou/',
+    'https://github.com/g0ne-i',
+  ],
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Higher School of Technology of Salé',
+  },
+  knowsAbout: ['Software Development', 'Artificial Intelligence', 'RAG', 'Odoo', 'Automation', 'Data Engineering', 'Power BI', 'React Native', 'GCP'],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Rabat',
@@ -38,19 +47,19 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'Ismail Ourdou — Junior Software & AI Developer',
   description:
-    'Portfolio of Ismail Ourdou, a junior developer specializing in ERP, Odoo, artificial intelligence, automation, and web development.',
-  keywords: ['Ismail Ourdou', 'ERP', 'Odoo', 'AI', 'Artificial Intelligence', 'Automation', 'Next.js', 'React', 'Rabat'],
+    'Portfolio of Ismail Ourdou, a junior software and AI developer specializing in RAG, Odoo, automation, data engineering, and full-stack web and mobile development.',
+  keywords: ['Ismail Ourdou', 'Software Developer', 'AI Developer', 'RAG', 'Odoo', 'Automation', 'Data Engineering', 'Next.js', 'React Native', 'Power BI', 'GCP', 'Rabat'],
   openGraph: {
     title: 'Ismail Ourdou — Junior Software & AI Developer',
     description:
-      'Portfolio of Ismail Ourdou, Junior Developer specializing in ERP, Odoo, artificial intelligence, automation and web development.',
+      'Software and AI portfolio featuring RAG, Odoo automation, data engineering, full-stack applications, and live client work.',
     type: 'website',
     images: [{ url: portraitUrl, width: 709, height: 709, alt: 'Ismail Ourdou' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ismail Ourdou — Junior Software & AI Developer',
-    description: 'ERP, Odoo, artificial intelligence, automation and web development.',
+    description: 'RAG, Odoo automation, data engineering, and full-stack web and mobile development.',
     images: [portraitUrl],
   },
 };

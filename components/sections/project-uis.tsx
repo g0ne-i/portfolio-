@@ -24,9 +24,7 @@ import {
   BedDouble,
   Stethoscope,
   Database,
-  Globe2,
   MapPin,
-  Search,
 } from 'lucide-react';
 
 /* === Documind UI === */
@@ -137,30 +135,30 @@ export function OdooDashboardUI() {
   const menuItems = lang === 'fr'
     ? [
         { icon: TrendingUp, label: 'CRM' },
-        { icon: FileText, label: 'Factures' },
-        { icon: Package, label: 'Produits' },
-        { icon: Target, label: 'Données' },
-        { icon: MessageSquare, label: 'Assistant IA' },
+        { icon: FileText, label: 'Factures OCR' },
+        { icon: Package, label: 'ETL' },
+        { icon: Target, label: 'Power BI' },
+        { icon: MessageSquare, label: 'Assistant RAG' },
       ]
     : [
         { icon: TrendingUp, label: 'CRM' },
-        { icon: FileText, label: 'Invoices' },
-        { icon: Package, label: 'Products' },
-        { icon: Target, label: 'Data' },
-        { icon: MessageSquare, label: 'AI Assistant' },
+        { icon: FileText, label: 'Invoice OCR' },
+        { icon: Package, label: 'ETL' },
+        { icon: Target, label: 'Power BI' },
+        { icon: MessageSquare, label: 'RAG Assistant' },
       ];
   const stats = lang === 'fr'
     ? [
-        { label: 'Revenus', value: '€84.2k', change: '+12%' },
-        { label: 'Commandes', value: '1,429', change: '+8%' },
-        { label: 'Clients', value: '342', change: '+5%' },
-        { label: 'Pipeline', value: '€23k', change: '+18%' },
+        { label: 'Factures', value: '128', change: 'OCR' },
+        { label: 'Contacts', value: '342', change: 'Match' },
+        { label: 'Pipelines', value: '12', change: 'ETL' },
+        { label: 'Prévision', value: '+18%', change: 'ASM' },
       ]
     : [
-        { label: 'Revenue', value: '€84.2k', change: '+12%' },
-        { label: 'Orders', value: '1,429', change: '+8%' },
-        { label: 'Clients', value: '342', change: '+5%' },
-        { label: 'Pipeline', value: '€23k', change: '+18%' },
+        { label: 'Invoices', value: '128', change: 'OCR' },
+        { label: 'Contacts', value: '342', change: 'Match' },
+        { label: 'Pipelines', value: '12', change: 'ETL' },
+        { label: 'Forecast', value: '+18%', change: 'ASM' },
       ];
 
   return (
@@ -195,13 +193,13 @@ export function OdooDashboardUI() {
         <div className="flex-1 p-3 lg:p-4 overflow-hidden">
           {/* Data flow indicator */}
           <div className="flex items-center gap-1.5 mb-3 text-[8px] uppercase tracking-wider text-slate/50">
-            <span>{lang === 'fr' ? 'Métier' : 'Business'}</span>
-            <ArrowRight className="w-2.5 h-2.5" />
             <span>Odoo</span>
             <ArrowRight className="w-2.5 h-2.5" />
-            <span>{lang === 'fr' ? 'Données' : 'Data'}</span>
+            <span>n8n</span>
             <ArrowRight className="w-2.5 h-2.5" />
-            <span className="text-clean-blue">{lang === 'fr' ? 'IA' : 'AI'}</span>
+            <span>ETL</span>
+            <ArrowRight className="w-2.5 h-2.5" />
+            <span className="text-clean-blue">Power BI</span>
           </div>
 
           <div className="grid grid-cols-4 gap-2 mb-3">
@@ -216,7 +214,7 @@ export function OdooDashboardUI() {
 
           {/* Chart */}
           <div className="p-2.5 border border-soft rounded mb-3">
-            <div className="text-[9px] text-slate/60 mb-2">{lang === 'fr' ? 'Aperçu des revenus' : 'Revenue Overview'}</div>
+            <div className="text-[9px] text-slate/60 mb-2">{lang === 'fr' ? 'Prévision saisonnière adaptative' : 'Adaptive Seasonal Forecast'}</div>
             <div className="flex items-end gap-1 h-16">
               {[40, 55, 35, 70, 60, 85, 75, 90, 65, 80, 95, 88].map((h, i) => (
                 <motion.div
@@ -235,13 +233,13 @@ export function OdooDashboardUI() {
           <div className="p-2 border border-clean-blue/30 rounded bg-clean-blue/5">
             <div className="flex items-center gap-1.5 mb-1.5">
               <Brain className="w-3 h-3 text-clean-blue" />
-              <span className="text-[9px] font-medium text-navy">{lang === 'fr' ? 'Assistant IA' : 'AI Assistant'}</span>
+              <span className="text-[9px] font-medium text-navy">{lang === 'fr' ? 'Assistant RAG' : 'RAG Assistant'}</span>
               <span className="ml-auto text-[8px] text-clean-blue flex items-center gap-1">
                 <span className="w-1 h-1 rounded-full bg-clean-blue animate-pulse-dot" /> {lang === 'fr' ? 'Actif' : 'Active'}
               </span>
             </div>
             <div className="text-[9px] text-slate bg-white rounded px-2 py-1 border border-soft">
-              {lang === 'fr' ? '« Analyse des ventes T1… Revenus en hausse de 12 % vs T4. »' : '“Analyzing Q1 sales data… Revenue up 12% vs Q4.”'}
+              {lang === 'fr' ? '« Facture extraite et contact rapproché avec confiance élevée. »' : '“Invoice extracted and contact matched with high confidence.”'}
             </div>
           </div>
         </div>
@@ -736,31 +734,6 @@ export function RedisGameOfLifeUI() {
   );
 }
 
-/* === Tourism data pipeline === */
-export function TourismDataUI() {
-  const { lang } = useLanguage();
-  const stages = lang === 'fr' ? ['Sources web', 'Collecte', 'Données structurées', 'Analyse'] : ['Web sources', 'Scraping', 'Structured data', 'Analysis'];
-  const records = lang === 'fr' ? ['Fiche destination', 'Fiche catégorie', 'Fiche source'] : ['Destination record', 'Category record', 'Source record'];
-  return (
-    <div className="flex h-full w-full flex-col bg-white p-4 lg:p-5">
-      <div className="flex items-center justify-between"><div className="flex items-center gap-2 text-xs font-semibold text-navy"><Globe2 className="h-4 w-4 text-clean-blue" /> {lang === 'fr' ? 'Données touristiques' : 'Tourism data'}</div><Search className="h-4 w-4 text-slate" /></div>
-      <div className="mt-4 flex items-center justify-between gap-1">
-        {stages.map((stage, index) => (
-          <div key={stage} className="contents"><motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1 }} className="rounded-md border border-clean-blue/15 bg-soft-blue/50 px-2 py-2 text-center text-[7px] font-medium text-navy sm:text-[8px]">{stage}</motion.div>{index < stages.length - 1 ? <ArrowRight className="h-3 w-3 flex-shrink-0 text-clean-blue/50" /> : null}</div>
-        ))}
-      </div>
-      <div className="mt-4 grid flex-1 gap-3 sm:grid-cols-5">
-        <div className="space-y-2 sm:col-span-3">
-          {records.map((record, index) => <motion.div key={record} initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 + index * 0.1 }} className="flex items-center gap-2 rounded-lg border border-soft p-2"><MapPin className="h-3 w-3 text-clean-blue" /><span className="text-[8px] text-navy">{record}</span><div className="ml-auto h-1.5 w-12 rounded bg-soft" /></motion.div>)}
-        </div>
-        <div className="flex items-end gap-1 rounded-lg bg-[#f8fbff] p-3 sm:col-span-2">
-          {[38, 62, 48, 78, 56, 88].map((height, index) => <motion.div key={index} initial={{ height: 0 }} whileInView={{ height: `${height}%` }} transition={{ delay: 0.35 + index * 0.06 }} className="flex-1 rounded-t bg-clean-blue/60" />)}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function LiveWebsiteUI({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="relative h-full w-full overflow-hidden bg-navy">
@@ -798,5 +771,4 @@ export const PROJECT_UIS: Record<string, React.ComponentType> = {
   'e-sport': ESportDashboardUI,
   'ai-resume': AIResumeScreeningUI,
   'redis-life': RedisGameOfLifeUI,
-  'tourism-data': TourismDataUI,
 };

@@ -65,7 +65,6 @@ export type Content = {
     timeline: { year: string; label: string; labelEn: string }[];
     description: string;
     descriptionEn: string;
-    currentLabel: string;
     expandLabel: string;
   };
   stack: {
@@ -123,7 +122,7 @@ export const content: Record<Language, Content> = {
   fr: {
     nav: {
       name: 'ISMAIL OURDOU',
-      subtitle: 'ERP · IA · FULL-STACK',
+      subtitle: 'LOGICIEL · IA · FULL-STACK',
       links: { work: 'Projets', experience: 'Expérience', stack: 'Technologies', about: 'À propos' },
       talk: "Discutons ↗",
     },
@@ -159,10 +158,10 @@ export const content: Record<Language, Content> = {
           name: 'Documind.com',
           subtitle: 'Gestion documentaire intelligente',
           description:
-            "Application web intelligente de gestion et d'analyse documentaire permettant l'import de documents, l'extraction automatique des données et l'automatisation du traitement par l'IA.",
+            "Développement d'une application web d'analyse documentaire intégrant un pipeline RAG asynchrone pour ingérer des PDF, extraire automatiquement les données et automatiser les workflows de traitement.",
           descriptionEn:
-            'Intelligent web-based document management and analysis application enabling document uploads, automatic data extraction, and AI-powered processing automation.',
-          tech: ['Next.js', 'MySQL'],
+            'Developed a web-based document analysis application featuring an asynchronous RAG pipeline to ingest PDFs, execute automatic data extraction, and automate processing workflows.',
+          tech: ['Next.js', 'Python', 'MySQL', 'GCP', 'RAG'],
           url: 'https://documind.delrio-lawoffice.com/',
         },
         {
@@ -195,7 +194,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'montana',
-          number: '04',
+          number: '07',
           kind: 'academic',
           category: 'Réservation hôtelière · Web',
           name: 'Montana',
@@ -206,7 +205,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'cabinet',
-          number: '05',
+          number: '08',
           kind: 'academic',
           category: 'Gestion médicale · Web',
           name: 'Gestion de Cabinet',
@@ -217,21 +216,21 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'e-sport',
-          number: '06',
+          number: '04',
           kind: 'academic',
           category: 'E-commerce · IA · Prévision',
           name: 'E-Sport',
           subtitle: 'Plateforme e-commerce intelligente',
           description:
-            "Développement d'une plateforme e-commerce intelligente intégrant un chatbot, des fonctionnalités de prévision des ventes et un système de communication en temps réel entre l'administrateur et le vendeur.",
+            "Développement d'une plateforme e-commerce intelligente intégrant une prévision des ventes pilotée par le machine learning, un chatbot de support automatisé et une messagerie bidirectionnelle en temps réel.",
           descriptionEn:
-            'Developed an intelligent e-commerce platform integrating an AI chatbot, sales forecasting capabilities, and a real-time communication system between the administrator and the seller.',
+            'Developed an intelligent e-commerce platform integrating ML-driven sales forecasting, an automated support chatbot, and a live, bi-directional chat interface.',
           tech: ['React', 'FastAPI', 'MongoDB', 'JWT'],
-          features: ['E-commerce', 'Chatbot IA', 'Prévision des ventes', 'Chat temps réel', 'Admin ↔ Vendeur', 'Authentification JWT', 'Gestion des produits'],
+          features: ['E-commerce', 'Chatbot de support IA', 'Prévision ML des ventes', 'Chat bidirectionnel en temps réel', 'Authentification JWT', 'Gestion des produits'],
         },
         {
           id: 'ai-resume',
-          number: '07',
+          number: '05',
           kind: 'academic',
           category: 'IA · Analyse de candidatures',
           name: 'Analyse IA de CV',
@@ -242,57 +241,44 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'redis-life',
-          number: '08',
+          number: '06',
           kind: 'academic',
           category: 'Systèmes distribués · Simulation',
           name: 'Jeu de la Vie Redis',
           subtitle: 'Jeu de la vie distribué',
           description: "Implémentation d'un jeu de la vie distribué utilisant Redis.",
           descriptionEn: 'Implemented a distributed Game of Life using Redis.',
-          tech: ['Node.js', 'React', 'Redis', 'Docker'],
-        },
-        {
-          id: 'tourism-data',
-          number: '09',
-          kind: 'academic',
-          category: 'Web scraping · Analyse de données',
-          name: 'Collecte de Données Touristiques',
-          subtitle: 'Collecte et analyse de données touristiques',
-          description:
-            "Développement d'une solution de web scraping dédiée à la collecte automatisée de données touristiques, suivie de leur structuration et de leur analyse afin d'extraire des informations exploitables.",
-          descriptionEn:
-            'Developed a web scraping solution for automated tourism data collection, followed by structuring and analysis to extract actionable information.',
-          tech: ['Python', 'BeautifulSoup', 'Web Scraping', 'Data Analysis'],
+          tech: ['React', 'Redis', 'Docker'],
         },
       ],
     },
     experience: {
       label: 'EXPÉRIENCE',
       number: '03',
-      title: 'Deux expériences, une même obsession.',
-      titleEn: 'Two experiences, one same obsession.',
+      title: 'Deux expériences, un même objectif.',
+      titleEn: 'Two experiences, one focus.',
       items: [
         {
           company: 'DarbTech',
-          role: 'Stage de fin d\'études',
+          role: 'Stage de fin d\'études · Projet de fin d\'études BUT',
           location: 'Rabat, Maroc · Avril 2026 — Septembre 2026',
           period: 'Avril 2026 — Septembre 2026',
           content:
-            "Contribution à des projets Odoo incluant la personnalisation de modules, l'intégration d'un assistant conversationnel basé sur l'IA, le traitement et la structuration de données ainsi que la migration vers Odoo SaaS.",
+            "Développement de modules Odoo personnalisés, d'un chatbot IA basé sur le RAG et de workflows d'automatisation n8n pour le traitement OCR des factures et la correspondance floue des contacts. Mise en place de pipelines ETL, migration de données vers Odoo SaaS et tableaux de bord Power BI avec prévisions par modèle saisonnier adaptatif pour l'analyse décisionnelle et prédictive, dans un environnement Agile.",
           contentEn:
-            'Contributed to Odoo ERP development projects, including module customization, implementation of an AI powered conversational assistant, data processing and structuring, and data migration to Odoo SaaS within an Agile environment.',
-          tech: ['Odoo', 'Python', 'IA', 'Traitement de données', 'SaaS', 'Agile'],
+            'Developed custom Odoo modules, a RAG-based AI chatbot, and n8n automation workflows for OCR-based invoice processing and contact fuzzy matching. Implemented ETL pipelines, Odoo SaaS data migration, and Power BI dashboards with Adaptive Seasonal Model forecasting for business intelligence and predictive analytics within an Agile environment.',
+          tech: ['Odoo', 'RAG', 'n8n', 'OCR', 'Fuzzy Matching', 'ETL', 'Power BI', 'Prévision', 'Agile'],
         },
         {
           company: '2PI E-LEARNING',
-          role: 'Stage · Développement logiciel',
+          role: 'Stage de fin d\'études · Projet de fin d\'études DUT',
           location: 'Rabat, Maroc · Avril 2025 — Juin 2025',
           period: 'Avril 2025 — Juin 2025',
           content:
-            "Participation au développement d'une application mobile et à l'intégration d'un module CRM automatisé avec un chatbot connecté à WhatsApp.",
+            "Développement d'une application mobile et d'un module CRM automatisé piloté par un agent IA WhatsApp pour analyser les conversations en arrière-plan et suivre les prospects en temps réel.",
           contentEn:
-            'Participated in the development of a mobile application and the integration of an automated CRM module with a WhatsApp-connected chatbot.',
-          tech: ['Mobile', 'CRM', 'Chatbot', 'WhatsApp'],
+            'Built a mobile app and automated CRM module driven by a WhatsApp AI Agent to handle background conversation analysis and real-time lead tracking.',
+          tech: ['Application mobile', 'CRM', 'Agent IA', 'WhatsApp', 'Suivi en temps réel'],
         },
       ],
     },
@@ -310,7 +296,6 @@ export const content: Record<Language, Content> = {
         "Un parcours guidé par la volonté de relier les systèmes métier à l'intelligence artificielle.",
       descriptionEn:
         'A journey driven by the will to connect business systems with artificial intelligence.',
-      currentLabel: 'En cours',
       expandLabel: 'Afficher les modules',
     },
     stack: {
@@ -325,17 +310,17 @@ export const content: Record<Language, Content> = {
         {
           key: 'ERP',
           label: 'ERP / Automatisation',
-          technologies: ['Odoo', 'n8n', 'API REST', 'Automatisation des workflows', 'Migration de données', 'Agile'],
+          technologies: ['Odoo', 'n8n', 'API REST', 'Automatisation des workflows', 'OCR', 'Correspondance floue', 'ETL', 'Migration de données', 'Agile'],
         },
         {
           key: 'IA',
           label: 'IA / Données',
-          technologies: ['Python', 'NLP', 'PyTorch', 'TensorFlow', 'Hadoop', 'Spark', 'Talend'],
+          technologies: ['Python', 'RAG', 'NLP', 'PyTorch', 'TensorFlow', 'Power BI', 'Prévision', 'Hadoop', 'Spark', 'Talend'],
         },
         {
           key: 'WEB',
-          label: 'Web',
-          technologies: ['React', 'Next.js', 'FastAPI', 'Laravel', 'Spring Boot', 'Django', 'Flask'],
+          label: 'Langages / Web & Mobile',
+          technologies: ['C', 'C++', 'Java', 'PHP', 'Python', 'JavaScript', 'React', 'React Native', 'Next.js', 'FastAPI', 'Laravel', 'Spring Boot', 'Java EE', 'Django', 'Flask', 'XML'],
         },
         {
           key: 'DONNÉES',
@@ -345,7 +330,7 @@ export const content: Record<Language, Content> = {
         {
           key: 'DEVOPS',
           label: 'DevOps',
-          technologies: ['Docker', 'Kubernetes', 'Linux', 'Git', 'GitHub', 'GitLab', 'Bitbucket', 'Azure Functions'],
+          technologies: ['Docker', 'Kubernetes', 'Linux', 'Git', 'GitHub', 'GitLab', 'Bitbucket', 'Jira', 'Azure Functions', 'GCP'],
         },
         {
           key: 'AUTOMATISATION',
@@ -365,14 +350,14 @@ export const content: Record<Language, Content> = {
           label: 'Bachelor Big Data & Intelligence Artificielle (BUT)',
           labelEn: "Bachelor's Degree in Big Data & Artificial Intelligence (BUT)",
           institution: 'École Supérieure de Technologie de Salé',
-          subjects: ['Statistiques & analyse de données', 'Entrepôts de données & Big Data', 'Fouille de données', 'Apprentissage automatique & profond', 'Méthodes Agiles & conception', 'DevOps & services web'],
+          subjects: ['Statistiques & analyse de données', 'Entrepôts de données & Big Data', 'Fouille de données', 'Machine learning & fondamentaux du deep learning', 'Méthodes Agiles & Design Thinking', 'DevOps & services web'],
         },
         {
           year: '2023–2025',
           label: 'DUT Génie Informatique',
           labelEn: 'University Diploma of Technology in Computer Engineering',
           institution: 'École Supérieure de Technologie de Salé',
-          subjects: ['Programmation', 'Réseaux informatiques', 'sécurité', 'Statistiques & probabilités', 'Analyse de données'],
+          subjects: ['Programmation', 'Réseaux informatiques', 'Sécurité', 'Statistiques & probabilités', 'Analyse de données'],
         },
       ],
     },
@@ -402,7 +387,7 @@ export const content: Record<Language, Content> = {
   en: {
     nav: {
       name: 'ISMAIL OURDOU',
-      subtitle: 'ERP · AI · FULL-STACK',
+      subtitle: 'SOFTWARE · AI · FULL-STACK',
       links: { work: 'Work', experience: 'Experience', stack: 'Stack', about: 'About' },
       talk: "Let's talk ↗",
     },
@@ -438,10 +423,10 @@ export const content: Record<Language, Content> = {
           name: 'Documind.com',
           subtitle: 'Intelligent document management',
           description:
-            'Intelligent web-based document management and analysis application enabling document uploads, automatic data extraction, and AI-powered processing automation.',
+            'Developed a web-based document analysis application featuring an asynchronous RAG pipeline to ingest PDFs, execute automatic data extraction, and automate processing workflows.',
           descriptionEn:
-            "Application web intelligente de gestion et d'analyse documentaire permettant l'import de documents, l'extraction automatique des données et l'automatisation du traitement par l'IA.",
-          tech: ['Next.js', 'MySQL'],
+            "Développement d'une application web d'analyse documentaire intégrant un pipeline RAG asynchrone pour ingérer des PDF, extraire automatiquement les données et automatiser les workflows de traitement.",
+          tech: ['Next.js', 'Python', 'MySQL', 'GCP', 'RAG'],
           url: 'https://documind.delrio-lawoffice.com/',
         },
         {
@@ -470,7 +455,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'montana',
-          number: '04',
+          number: '07',
           kind: 'academic',
           category: 'Hotel Booking · Web',
           name: 'Montana',
@@ -481,7 +466,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'cabinet',
-          number: '05',
+          number: '08',
           kind: 'academic',
           category: 'Medical Practice · Web',
           name: 'Cabinet Management',
@@ -492,21 +477,21 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'e-sport',
-          number: '06',
+          number: '04',
           kind: 'academic',
           category: 'E-Commerce · AI · Forecasting',
           name: 'E-Sport',
           subtitle: 'Intelligent E-Commerce Platform',
           description:
-            'Developed an intelligent e-commerce platform integrating an AI chatbot, sales forecasting capabilities, and a real-time communication system between the administrator and the seller.',
+            'Developed an intelligent e-commerce platform integrating ML-driven sales forecasting, an automated support chatbot, and a live, bi-directional chat interface.',
           descriptionEn:
-            "Développement d'une plateforme e-commerce intelligente intégrant un chatbot, des fonctionnalités de prévision des ventes et un système de communication en temps réel entre l'administrateur et le vendeur.",
+            "Développement d'une plateforme e-commerce intelligente intégrant une prévision des ventes pilotée par le machine learning, un chatbot de support automatisé et une messagerie bidirectionnelle en temps réel.",
           tech: ['React', 'FastAPI', 'MongoDB', 'JWT'],
-          features: ['E-Commerce', 'AI Chatbot', 'Sales Forecasting', 'Real-Time Chat', 'Admin ↔ Seller', 'JWT Authentication', 'Product Management'],
+          features: ['E-Commerce', 'AI Support Chatbot', 'ML Sales Forecasting', 'Live Bi-Directional Chat', 'JWT Authentication', 'Product Management'],
         },
         {
           id: 'ai-resume',
-          number: '07',
+          number: '05',
           kind: 'academic',
           category: 'AI · Candidate Analysis',
           name: 'AI Resume Screening',
@@ -517,57 +502,44 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'redis-life',
-          number: '08',
+          number: '06',
           kind: 'academic',
           category: 'Distributed Systems · Simulation',
           name: 'Redis Game of Life',
           subtitle: 'Distributed cellular simulation',
           description: 'Implemented a distributed Game of Life using Redis.',
           descriptionEn: "Implémentation d'un jeu de la vie distribué utilisant Redis.",
-          tech: ['Node.js', 'React', 'Redis', 'Docker'],
-        },
-        {
-          id: 'tourism-data',
-          number: '09',
-          kind: 'academic',
-          category: 'Web Scraping · Data Analysis',
-          name: 'Tourism Data Scraping',
-          subtitle: 'Tourism data collection and analysis',
-          description:
-            'Developed a web scraping solution for automated tourism data collection, followed by structuring and analysis to extract actionable information.',
-          descriptionEn:
-            "Développement d'une solution de web scraping dédiée à la collecte automatisée de données touristiques, suivie de leur structuration et de leur analyse.",
-          tech: ['Python', 'BeautifulSoup', 'Web Scraping', 'Data Analysis'],
+          tech: ['React', 'Redis', 'Docker'],
         },
       ],
     },
     experience: {
       label: 'EXPERIENCE',
       number: '03',
-      title: 'Two experiences, one same obsession.',
-      titleEn: 'Deux expériences, une même obsession.',
+      title: 'Two experiences, one focus.',
+      titleEn: 'Deux expériences, un même objectif.',
       items: [
         {
           company: 'DarbTech',
-          role: 'Graduation Internship',
+          role: 'Graduation Internship · BUT Capstone Project',
           location: 'Rabat, Morocco · April 2026 — September 2026',
           period: 'April 2026 — September 2026',
           content:
-            'Contributed to Odoo ERP development projects, including module customization, implementation of an AI powered conversational assistant, data processing and structuring, and data migration to Odoo SaaS within an Agile environment.',
+            'Developed custom Odoo modules, a RAG-based AI chatbot, and n8n automation workflows for OCR-based invoice processing and contact fuzzy matching. Implemented ETL pipelines, Odoo SaaS data migration, and Power BI dashboards with Adaptive Seasonal Model forecasting for business intelligence and predictive analytics within an Agile environment.',
           contentEn:
-            "Contribution à des projets Odoo incluant la personnalisation de modules, l'intégration d'un assistant conversationnel basé sur l'IA, le traitement et la structuration de données ainsi que la migration vers Odoo SaaS.",
-          tech: ['Odoo', 'Python', 'AI', 'Data Processing', 'SaaS', 'Agile'],
+            "Développement de modules Odoo personnalisés, d'un chatbot IA basé sur le RAG et de workflows d'automatisation n8n pour le traitement OCR des factures et la correspondance floue des contacts. Mise en place de pipelines ETL, migration de données vers Odoo SaaS et tableaux de bord Power BI avec prévisions par modèle saisonnier adaptatif pour l'analyse décisionnelle et prédictive, dans un environnement Agile.",
+          tech: ['Odoo', 'RAG', 'n8n', 'OCR', 'Fuzzy Matching', 'ETL', 'Power BI', 'Forecasting', 'Agile'],
         },
         {
           company: '2PI E-LEARNING',
-          role: 'Internship · Software Development',
+          role: 'Graduation Internship · DUT Capstone Project',
           location: 'Rabat, Morocco · April 2025 — June 2025',
           period: 'April 2025 — June 2025',
           content:
-            'Participated in the development of a mobile application and the integration of an automated CRM module with a WhatsApp-connected chatbot.',
+            'Built a mobile app and automated CRM module driven by a WhatsApp AI Agent to handle background conversation analysis and real-time lead tracking.',
           contentEn:
-            "Participation au développement d'une application mobile et à l'intégration d'un module CRM automatisé avec un chatbot connecté à WhatsApp.",
-          tech: ['Mobile', 'CRM', 'Chatbot', 'WhatsApp'],
+            "Développement d'une application mobile et d'un module CRM automatisé piloté par un agent IA WhatsApp pour analyser les conversations en arrière-plan et suivre les prospects en temps réel.",
+          tech: ['Mobile App', 'CRM', 'AI Agent', 'WhatsApp', 'Real-Time Tracking'],
         },
       ],
     },
@@ -585,7 +557,6 @@ export const content: Record<Language, Content> = {
         'A journey driven by the will to connect business systems with artificial intelligence.',
       descriptionEn:
         "Un parcours guidé par la volonté de relier les systèmes métier à l'intelligence artificielle.",
-      currentLabel: 'Current',
       expandLabel: 'Show modules',
     },
     stack: {
@@ -600,17 +571,17 @@ export const content: Record<Language, Content> = {
         {
           key: 'ERP',
           label: 'ERP / Automation',
-          technologies: ['Odoo', 'n8n', 'REST APIs', 'Workflow Automation', 'Data Migration', 'Agile'],
+          technologies: ['Odoo', 'n8n', 'REST APIs', 'Workflow Automation', 'OCR', 'Fuzzy Matching', 'ETL', 'Data Migration', 'Agile'],
         },
         {
           key: 'AI',
           label: 'AI / Data',
-          technologies: ['Python', 'NLP', 'PyTorch', 'TensorFlow', 'Hadoop', 'Spark', 'Talend'],
+          technologies: ['Python', 'RAG', 'NLP', 'PyTorch', 'TensorFlow', 'Power BI', 'Forecasting', 'Hadoop', 'Spark', 'Talend'],
         },
         {
           key: 'WEB',
-          label: 'Web',
-          technologies: ['React', 'Next.js', 'FastAPI', 'Laravel', 'Spring Boot', 'Django', 'Flask'],
+          label: 'Languages / Web & Mobile',
+          technologies: ['C', 'C++', 'Java', 'PHP', 'Python', 'JavaScript', 'React', 'React Native', 'Next.js', 'FastAPI', 'Laravel', 'Spring Boot', 'Java EE', 'Django', 'Flask', 'XML'],
         },
         {
           key: 'DATA',
@@ -620,7 +591,7 @@ export const content: Record<Language, Content> = {
         {
           key: 'DEVOPS',
           label: 'DevOps',
-          technologies: ['Docker', 'Kubernetes', 'Linux', 'Git', 'GitHub', 'GitLab', 'Bitbucket', 'Azure Functions'],
+          technologies: ['Docker', 'Kubernetes', 'Linux', 'Git', 'GitHub', 'GitLab', 'Bitbucket', 'Jira', 'Azure Functions', 'GCP'],
         },
         {
           key: 'AUTOMATION',
@@ -639,15 +610,15 @@ export const content: Record<Language, Content> = {
           year: '2025–2026',
           label: "Bachelor's Degree in Big Data & Artificial Intelligence (BUT)",
           labelEn: 'Bachelor Big Data & Intelligence Artificielle (BUT)',
-          institution: 'Higher School of Technology of Sale',
-          subjects: ['Statistics & Data Analysis', 'Data Warehousing & Big Data', 'Data Mining', 'Machine Learning & Deep Learning', 'Agile Methodologies & Design Thinking', 'DevOps & Web Services'],
+          institution: 'Higher School of Technology of Salé',
+          subjects: ['Statistics & Data Analysis', 'Data Warehousing & Big Data', 'Data Mining', 'Machine Learning & Fundamentals of Deep Learning', 'Agile Methodologies & Design Thinking', 'DevOps & Web Services'],
         },
         {
           year: '2023–2025',
           label: 'University Diploma of Technology in Computer Engineering',
           labelEn: 'DUT Génie Informatique',
-          institution: 'Higher School of Technology of Sale',
-          subjects: ['Programming', 'Computer Networks', 'Cybersecurity', 'Statistics & Probability', 'Data Analysis'],
+          institution: 'Higher School of Technology of Salé',
+          subjects: ['Programming', 'Computer Networks', 'Security', 'Statistics & Probability', 'Data Analysis'],
         },
       ],
     },

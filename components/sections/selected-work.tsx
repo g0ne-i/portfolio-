@@ -157,9 +157,11 @@ export default function SelectedWork() {
   const { t } = useLanguage();
   const projects = t.work.projects;
   const freelanceProjects = projects.filter((project) => project.kind === 'freelance');
-  const academicProjects = projects.filter((project) => project.kind === 'academic');
-  const featuredAcademic = academicProjects.find((project) => project.id === 'montana');
-  const academicGridProjects = academicProjects.filter((project) => project.id !== 'montana');
+  const academicOrder = ['e-sport', 'ai-resume', 'redis-life', 'montana', 'cabinet'];
+  const academicProjects = projects
+    .filter((project) => project.kind === 'academic')
+    .sort((a, b) => academicOrder.indexOf(a.id) - academicOrder.indexOf(b.id));
+  const academicRange = '04—08';
 
   return (
     <section id="work" className="relative w-full bg-white py-24 md:py-32">
@@ -194,18 +196,9 @@ export default function SelectedWork() {
         </div>
 
         <div className="mt-28 lg:mt-44">
-          <GroupHeading number="04—09">{t.work.academicLabel}</GroupHeading>
-          {featuredAcademic ? (
-            <article
-              id={`project-${featuredAcademic.id}`}
-              className="mb-12 grid scroll-mt-24 items-center gap-8 rounded-[28px] border border-soft bg-soft-blue/20 p-4 sm:p-6 lg:grid-cols-12 lg:p-8"
-            >
-              <div className="lg:col-span-7"><ProjectVisual projectId={featuredAcademic.id} compact /></div>
-              <div className="lg:col-span-5"><ProjectCopy project={featuredAcademic} /></div>
-            </article>
-          ) : null}
+          <GroupHeading number={academicRange}>{t.work.academicLabel}</GroupHeading>
           <div className="grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-6">
-            {academicGridProjects.map((project, index) => {
+            {academicProjects.map((project, index) => {
               const desktopPosition = index === 3 ? 'xl:col-start-2' : index === 4 ? 'xl:col-start-4' : '';
               return (
                 <article key={project.id} id={`project-${project.id}`} className={`flex h-full scroll-mt-24 flex-col rounded-[24px] border border-soft bg-white p-4 shadow-[0_24px_60px_-48px_rgba(15,23,42,0.45)] sm:p-5 md:col-span-1 xl:col-span-2 ${desktopPosition}`}>

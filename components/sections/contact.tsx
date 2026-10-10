@@ -125,7 +125,7 @@ export default function Contact() {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-soft flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-sm text-slate">
-            © 2026 Ismail Ourdou · ERP · {lang === 'fr' ? 'IA' : 'AI'} · Full-Stack
+            © 2026 Ismail Ourdou · {lang === 'fr' ? 'Logiciel · IA' : 'Software · AI'} · Full-Stack
           </span>
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-clean-blue animate-pulse-dot" />

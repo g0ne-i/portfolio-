@@ -75,7 +75,7 @@ export default function About() {
               <figcaption>
                 <p className="text-base font-semibold tracking-wide text-navy">ISMAIL OURDOU</p>
                 <p className="mt-1 text-sm text-slate">{lang === 'fr' ? 'Rabat, Maroc' : 'Rabat, Morocco'}</p>
-                <p className="mt-3 text-sm uppercase tracking-[0.14em] text-clean-blue">{lang === 'fr' ? 'ERP · IA · Full-Stack' : 'ERP · AI · Full-Stack'}</p>
+                <p className="mt-3 text-sm uppercase tracking-[0.14em] text-clean-blue">{lang === 'fr' ? 'Logiciel · IA · Full-Stack' : 'Software · AI · Full-Stack'}</p>
               </figcaption>
             </motion.figure>
           </div>
@@ -94,7 +94,6 @@ export default function About() {
                   const education = t.education.items.find((entry) => entry.year === item.year);
                   const hasModules = Boolean(education?.subjects.length);
                   const isOpen = hasModules && openYear === item.year;
-                  const isCurrent = item.year === '2025–2026';
 
                   return (
                     <motion.article
@@ -124,12 +123,6 @@ export default function About() {
                             <span className="text-base font-medium text-navy lg:text-lg">{item.label}</span>
                           </span>
                           <span className="flex shrink-0 items-center gap-3">
-                            {isCurrent ? (
-                              <span className="inline-flex items-center gap-2 rounded-full border border-clean-blue/20 bg-soft-blue px-3 py-1.5 text-sm font-medium text-clean-blue">
-                                <span className="h-2 w-2 rounded-full bg-clean-blue motion-safe:animate-pulse" />
-                                {t.about.currentLabel}
-                              </span>
-                            ) : null}
                             <ChevronDown className={`h-5 w-5 text-clean-blue transition-transform ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                           </span>
                         </button>
