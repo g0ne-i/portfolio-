@@ -223,14 +223,14 @@ export const content: Record<Language, Content> = {
           id: 'sportsbook',
           number: '05',
           kind: 'personal',
-          category: 'Application web · Sport',
-          name: 'Sportsbook',
-          subtitle: 'Application de paris sportifs',
+          category: 'Application web · Réservation sportive',
+          name: 'SportRéserver',
+          subtitle: 'Plateforme de réservation de terrains',
           description:
-            'Conception et développement d’une application web de paris sportifs.',
+            "Développement d’une plateforme de réservation de terrains de sport combinant une application monopage Angular, une API Symfony, PostgreSQL, des sessions Redis, Nginx, les e-mails transactionnels Brevo, les SMS Infobip et les paiements hébergés ChariPay.",
           descriptionEn:
-            'Designed and built a web application for sports betting.',
-          tech: ['Application web', 'Sportsbook'],
+            'Built a sports-field reservation platform combining an Angular single-page application, a Symfony API, PostgreSQL, Redis-backed sessions, Nginx, Brevo transactional email, Infobip SMS, and ChariPay hosted payments.',
+          tech: ['Angular', 'Symfony', 'PostgreSQL', 'Redis', 'Nginx', 'Brevo', 'Infobip', 'ChariPay'],
         },
         {
           id: 'montana',
@@ -524,13 +524,14 @@ export const content: Record<Language, Content> = {
           id: 'sportsbook',
           number: '05',
           kind: 'personal',
-          category: 'Web Application · Sport',
-          name: 'Sportsbook',
-          subtitle: 'Sports betting web application',
-          description: 'Designed and built a web application for sports betting.',
+          category: 'Web Application · Sports Booking',
+          name: 'SportRéserver',
+          subtitle: 'Sports-field reservation platform',
+          description:
+            'Built a sports-field reservation platform combining an Angular single-page application, a Symfony API, PostgreSQL, Redis-backed sessions, Nginx, Brevo transactional email, Infobip SMS, and ChariPay hosted payments.',
           descriptionEn:
-            'Conception et développement d’une application web de paris sportifs.',
-          tech: ['Web Application', 'Sportsbook'],
+            "Développement d’une plateforme de réservation de terrains de sport combinant une application monopage Angular, une API Symfony, PostgreSQL, des sessions Redis, Nginx, les e-mails transactionnels Brevo, les SMS Infobip et les paiements hébergés ChariPay.",
+          tech: ['Angular', 'Symfony', 'PostgreSQL', 'Redis', 'Nginx', 'Brevo', 'Infobip', 'ChariPay'],
         },
         {
           id: 'montana',

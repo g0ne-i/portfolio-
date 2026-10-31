@@ -186,6 +186,38 @@ export function OdooMcpUI() {
 /* === Sportsbook dashboard === */
 export function SportsbookUI() {
   const { lang } = useLanguage();
+
+  return (
+    <div className="relative flex h-full w-full flex-col overflow-hidden bg-[#111315] text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_25%,rgba(142,184,71,0.4),transparent_27%),radial-gradient(circle_at_78%_22%,rgba(7,87,57,0.65),transparent_42%),linear-gradient(110deg,#113b2c,#0b1615_56%,#153828)]" />
+      <div className="relative bg-[#063b2a] py-1 text-center text-[7px] font-semibold text-[#d7ff54]">{lang === 'fr' ? 'Trouvez votre terrain. Vivez votre moment.' : 'Find your field. Live the moment.'}</div>
+      <div className="relative flex items-center justify-between border-b border-white/10 bg-[#141619] px-4 py-3">
+        <div className="flex items-center gap-2 text-xs font-semibold"><span className="grid h-5 w-5 place-items-center rounded-md bg-[#caff46] text-[10px] text-[#103d2f]">S</span> SportRéserver</div>
+        <div className="hidden gap-4 text-[8px] text-white/65 sm:flex"><span>{lang === 'fr' ? 'Découvrir les terrains' : 'Discover fields'}</span><span>Sports</span><span>{lang === 'fr' ? 'Tournois' : 'Tournaments'}</span></div>
+        <span className="rounded-md bg-[#caff46] px-2.5 py-1.5 text-[8px] font-semibold text-[#123526]">{lang === 'fr' ? 'Rejoindre' : 'Join'}</span>
+      </div>
+      <div className="relative flex flex-1 flex-col justify-between p-5 sm:p-7">
+        <div className="max-w-[62%]">
+          <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#d7ff54]">{lang === 'fr' ? 'La ville est votre terrain de jeu' : 'The city is your playing field'}</p>
+          <h3 className="mt-3 text-xl font-bold leading-tight sm:text-3xl">{lang === 'fr' ? 'Trouvez votre terrain. Vivez l’instant.' : 'Find your field. Live the moment.'}</h3>
+          <p className="mt-3 text-[9px] leading-relaxed text-white/75 sm:text-[10px]">{lang === 'fr' ? 'Du match improvisé à la rencontre en équipe, trouvez le terrain idéal.' : 'From an impromptu match to a team game, find the ideal field.'}</p>
+        </div>
+        <div className="rounded-xl border border-white/10 bg-[#121416]/95 p-2.5 shadow-2xl">
+          <p className="mb-2 text-[8px] font-semibold">{lang === 'fr' ? 'Qu’est-ce qu’on joue aujourd’hui ?' : 'What are we playing today?'}</p>
+          <div className="grid gap-2 sm:grid-cols-4">
+            {[
+              { label: lang === 'fr' ? 'Toute activité' : 'Any activity', icon: Trophy },
+              { label: lang === 'fr' ? 'Toutes les villes' : 'All cities', icon: MapPin },
+              { label: lang === 'fr' ? '1 nov. 2026' : 'Nov 1, 2026', icon: CalendarDays },
+            ].map((field) => <div key={field.label} className="flex items-center gap-2 rounded-md bg-white/[0.06] px-2.5 py-2 text-[8px] text-white/80"><field.icon className="h-3 w-3 text-[#caff46]" />{field.label}</div>)}
+            <div className="rounded-md bg-[#caff46] px-2.5 py-2 text-center text-[8px] font-semibold text-[#123526]">{lang === 'fr' ? 'Trouver un terrain' : 'Find a field'}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  /* Legacy betting mockup, superseded by the SportRéserver booking interface above.
   const matches = [
     { teams: 'Rabat FC  ·  Casablanca', odds: ['1.82', '3.40', '4.10'] },
     { teams: 'Lions  ·  Atlas', odds: ['2.15', '3.10', '3.25'] },
@@ -217,6 +249,8 @@ export function SportsbookUI() {
       </div>
     </div>
   );
+}
+  */
 }
 
 /* === Odoo ERP Dashboard === */
