@@ -360,7 +360,7 @@ export const content: Record<Language, Content> = {
         {
           key: 'WEB',
           label: 'Langages / Web & Mobile',
-          technologies: ['C', 'C++', 'Java', 'PHP', 'Python', 'JavaScript', 'React', 'React Native', 'Next.js', 'FastAPI', 'Laravel', 'Spring Boot', 'Java EE', 'Django', 'Flask', 'XML'],
+          technologies: ['C', 'C++', 'Java', 'PHP', 'Python', 'JavaScript', 'Angular', 'React', 'React Native', 'Next.js', 'Symfony', 'FastAPI', 'Laravel', 'Spring Boot', 'Java EE', 'Django', 'Flask', 'XML'],
         },
         {
           key: 'DONNÉES',
@@ -661,7 +661,7 @@ export const content: Record<Language, Content> = {
         {
           key: 'WEB',
           label: 'Languages / Web & Mobile',
-          technologies: ['C', 'C++', 'Java', 'PHP', 'Python', 'JavaScript', 'React', 'React Native', 'Next.js', 'FastAPI', 'Laravel', 'Spring Boot', 'Java EE', 'Django', 'Flask', 'XML'],
+          technologies: ['C', 'C++', 'Java', 'PHP', 'Python', 'JavaScript', 'Angular', 'React', 'React Native', 'Next.js', 'Symfony', 'FastAPI', 'Laravel', 'Spring Boot', 'Java EE', 'Django', 'Flask', 'XML'],
         },
         {
           key: 'DATA',
