@@ -25,6 +25,12 @@ import {
   Stethoscope,
   Database,
   MapPin,
+  Bot,
+  ReceiptText,
+  UserRound,
+  Boxes,
+  Trophy,
+  CircleDollarSign,
 } from 'lucide-react';
 
 /* === Documind UI === */
@@ -123,6 +129,90 @@ export function DocumindUI() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* === Claude ↔ Odoo MCP console === */
+export function OdooMcpUI() {
+  const { lang } = useLanguage();
+  const actions = lang === 'fr'
+    ? [
+        { icon: ReceiptText, label: 'Créer une facture', value: 'FAC-2026-041' },
+        { icon: UserRound, label: 'Ajouter un partenaire', value: 'Nouveau contact' },
+        { icon: Boxes, label: 'Créer un produit', value: 'Catalogue Odoo' },
+      ]
+    : [
+        { icon: ReceiptText, label: 'Create invoice', value: 'INV-2026-041' },
+        { icon: UserRound, label: 'Add partner', value: 'New contact' },
+        { icon: Boxes, label: 'Create product', value: 'Odoo catalog' },
+      ];
+
+  return (
+    <div className="flex h-full w-full flex-col bg-[#f8fbff]">
+      <div className="flex items-center justify-between border-b border-soft bg-white px-4 py-3">
+        <div className="flex items-center gap-2 text-xs font-semibold text-navy"><Bot className="h-4 w-4 text-clean-blue" /> Claude · Odoo MCP</div>
+        <span className="rounded-full bg-emerald-50 px-2 py-1 text-[8px] font-medium text-emerald-700">{lang === 'fr' ? 'Connecté' : 'Connected'}</span>
+      </div>
+      <div className="grid flex-1 gap-3 p-4 sm:grid-cols-5">
+        <div className="rounded-xl bg-[#1c1b2e] p-3 text-white sm:col-span-3">
+          <p className="text-[8px] uppercase tracking-[0.15em] text-white/45">Claude</p>
+          <div className="mt-4 rounded-lg bg-white/10 p-3 text-[10px] leading-relaxed text-white/90">
+            {lang === 'fr' ? 'Crée une facture pour Atlas Studio avec le produit “Audit IA”.' : 'Create an invoice for Atlas Studio with the “AI Audit” product.'}
+          </div>
+          <div className="mt-3 rounded-lg bg-clean-blue/20 p-3 text-[9px] leading-relaxed text-white/85">
+            <span className="font-semibold text-white">MCP · Odoo</span><br />
+            {lang === 'fr' ? 'Partenaire trouvé · Produit ajouté · Facture créée.' : 'Partner found · Product added · Invoice created.'}
+          </div>
+        </div>
+        <div className="rounded-xl border border-soft bg-white p-3 sm:col-span-2">
+          <p className="text-[8px] font-semibold uppercase tracking-[0.12em] text-slate">{lang === 'fr' ? 'Outils MCP' : 'MCP tools'}</p>
+          <div className="mt-3 space-y-2">
+            {actions.map((action, index) => (
+              <div key={action.label} className="rounded-lg border border-soft bg-soft-blue/40 p-2">
+                <div className="flex items-center gap-2 text-[9px] font-medium text-navy"><action.icon className="h-3 w-3 text-clean-blue" />{action.label}</div>
+                <div className="mt-1 pl-5 text-[8px] text-slate">{index === 0 ? action.value : `✓ ${action.value}`}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* === Sportsbook dashboard === */
+export function SportsbookUI() {
+  const { lang } = useLanguage();
+  const matches = [
+    { teams: 'Rabat FC  ·  Casablanca', odds: ['1.82', '3.40', '4.10'] },
+    { teams: 'Lions  ·  Atlas', odds: ['2.15', '3.10', '3.25'] },
+    { teams: 'Marrakesh  ·  Tanger', odds: ['1.95', '3.25', '3.75'] },
+  ];
+
+  return (
+    <div className="flex h-full w-full flex-col bg-[#081225] p-4 text-white">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2 text-xs font-semibold"><Trophy className="h-4 w-4 text-amber-300" /> SPORTBOOK</div>
+        <span className="rounded-full bg-emerald-400/15 px-2 py-1 text-[8px] text-emerald-300">LIVE</span>
+      </div>
+      <div className="mt-4 grid flex-1 gap-3 sm:grid-cols-3">
+        <div className="space-y-2 sm:col-span-2">
+          <p className="text-[8px] uppercase tracking-[0.14em] text-white/45">{lang === 'fr' ? 'Matchs populaires' : 'Popular matches'}</p>
+          {matches.map((match, index) => (
+            <div key={match.teams} className="rounded-lg border border-white/10 bg-white/[0.06] p-2.5">
+              <div className="flex justify-between text-[9px]"><span>{match.teams}</span><span className="text-amber-300">{index === 0 ? 'Live 62\'' : lang === 'fr' ? 'Aujourd’hui' : 'Today'}</span></div>
+              <div className="mt-2 grid grid-cols-3 gap-1.5">{match.odds.map((odd, oddIndex) => <div key={odd} className={`rounded-md py-1.5 text-center text-[8px] ${oddIndex === 0 && index === 0 ? 'bg-clean-blue text-white' : 'bg-white/10 text-white/75'}`}>{odd}</div>)}</div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-xl border border-white/10 bg-white/[0.06] p-3">
+          <div className="flex items-center gap-1.5 text-[9px] font-medium"><CircleDollarSign className="h-3 w-3 text-amber-300" />{lang === 'fr' ? 'Mon pari' : 'Bet slip'}</div>
+          <div className="mt-4 border-b border-white/10 pb-3 text-[8px] text-white/70">Rabat FC · {lang === 'fr' ? 'Gagnant' : 'Winner'} <span className="float-right text-white">1.82</span></div>
+          <div className="mt-3 flex justify-between text-[8px] text-white/60"><span>{lang === 'fr' ? 'Cote totale' : 'Total odds'}</span><span className="font-medium text-white">1.82</span></div>
+          <div className="mt-3 rounded-md bg-amber-300 py-2 text-center text-[8px] font-semibold text-navy">{lang === 'fr' ? 'Placer le pari' : 'Place bet'}</div>
         </div>
       </div>
     </div>
@@ -766,6 +856,8 @@ export const PROJECT_UIS: Record<string, React.ComponentType> = {
   documind: DocumindLiveUI,
   callmegrowth: CallMeGrowthLiveUI,
   ladybug: LadybugTradingLiveUI,
+  'odoo-mcp': OdooMcpUI,
+  sportsbook: SportsbookUI,
   montana: MontanaUI,
   cabinet: CabinetManagementUI,
   'e-sport': ESportDashboardUI,

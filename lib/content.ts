@@ -26,12 +26,13 @@ export type Content = {
     title: string;
     titleEn: string;
     freelanceLabel: string;
+    personalLabel: string;
     academicLabel: string;
     illustrativeLabel: string;
     projects: {
       id: string;
       number: string;
-      kind: 'freelance' | 'academic';
+      kind: 'freelance' | 'personal' | 'academic';
       category: string;
       name: string;
       subtitle: string;
@@ -40,6 +41,18 @@ export type Content = {
       tech: string[];
       features?: string[];
       url?: string;
+    }[];
+  };
+  certifications: {
+    label: string;
+    number: string;
+    title: string;
+    titleEn: string;
+    verify: string;
+    items: {
+      issuer: string;
+      name: string;
+      url: string;
     }[];
   };
   experience: {
@@ -147,6 +160,7 @@ export const content: Record<Language, Content> = {
       title: 'Des projets, pas seulement des technologies.',
       titleEn: 'Projects, not just technologies.',
       freelanceLabel: 'PROJETS FREELANCE',
+      personalLabel: 'PROJETS PERSONNELS & IA',
       academicLabel: 'PROJETS ACADÉMIQUES',
       illustrativeLabel: 'Interface illustrative',
       projects: [
@@ -193,8 +207,34 @@ export const content: Record<Language, Content> = {
           url: 'https://ladybugtrading.com/',
         },
         {
+          id: 'odoo-mcp',
+          number: '04',
+          kind: 'personal',
+          category: 'IA conversationnelle · ERP · MCP',
+          name: 'MCP Odoo avec Claude',
+          subtitle: 'Assistant IA pour les opérations Odoo',
+          description:
+            "Création d’un serveur MCP connecté à Claude pour gérer Odoo en langage naturel : création de factures, partenaires et produits depuis l’assistant.",
+          descriptionEn:
+            'Built a Claude-connected MCP server for natural-language Odoo operations: creating invoices, partners, and products directly through the assistant.',
+          tech: ['Claude', 'MCP', 'Odoo'],
+        },
+        {
+          id: 'sportsbook',
+          number: '05',
+          kind: 'personal',
+          category: 'Application web · Sport',
+          name: 'Sportsbook',
+          subtitle: 'Application de paris sportifs',
+          description:
+            'Conception et développement d’une application web de paris sportifs.',
+          descriptionEn:
+            'Designed and built a web application for sports betting.',
+          tech: ['Application web', 'Sportsbook'],
+        },
+        {
           id: 'montana',
-          number: '07',
+          number: '09',
           kind: 'academic',
           category: 'Réservation hôtelière · Web',
           name: 'Montana',
@@ -205,7 +245,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'cabinet',
-          number: '08',
+          number: '10',
           kind: 'academic',
           category: 'Gestion médicale · Web',
           name: 'Gestion de Cabinet',
@@ -216,7 +256,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'e-sport',
-          number: '04',
+          number: '06',
           kind: 'academic',
           category: 'E-commerce · IA · Prévision',
           name: 'E-Sport',
@@ -230,7 +270,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'ai-resume',
-          number: '05',
+          number: '07',
           kind: 'academic',
           category: 'IA · Analyse de candidatures',
           name: 'Analyse IA de CV',
@@ -241,7 +281,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'redis-life',
-          number: '06',
+          number: '08',
           kind: 'academic',
           category: 'Systèmes distribués · Simulation',
           name: 'Jeu de la Vie Redis',
@@ -310,12 +350,12 @@ export const content: Record<Language, Content> = {
         {
           key: 'ERP',
           label: 'ERP / Automatisation',
-          technologies: ['Odoo', 'n8n', 'API REST', 'Automatisation des workflows', 'OCR', 'Correspondance floue', 'ETL', 'Migration de données', 'Agile'],
+          technologies: ['Odoo', 'Claude MCP', 'n8n', 'API REST', 'Automatisation des workflows', 'OCR', 'Correspondance floue', 'ETL', 'Migration de données', 'Agile'],
         },
         {
           key: 'IA',
           label: 'IA / Données',
-          technologies: ['Python', 'RAG', 'NLP', 'PyTorch', 'TensorFlow', 'Power BI', 'Prévision', 'Hadoop', 'Spark', 'Talend'],
+          technologies: ['Python', 'RAG', 'NLP', 'PyTorch', 'TensorFlow', 'Scikit-learn', 'NeuralProphet', 'OpenCV', 'OCR', 'Power BI', 'Prévision', 'Hadoop', 'Spark', 'Talend'],
         },
         {
           key: 'WEB',
@@ -361,9 +401,22 @@ export const content: Record<Language, Content> = {
         },
       ],
     },
+    certifications: {
+      label: 'CERTIFICATIONS',
+      number: '06',
+      title: 'Apprendre, appliquer, approfondir.',
+      titleEn: 'Learn, apply, deepen.',
+      verify: 'Voir le certificat',
+      items: [
+        { issuer: 'Chainguard', name: 'AI Threat Tamer', url: 'https://www.credly.com/badges/ffe9287f-7ca6-4188-a27c-8e68566f55d2/public_url' },
+        { issuer: 'MongoDB', name: 'Deploying and Evaluating GenAI Apps with MongoDB', url: 'https://www.credly.com/badges/d0583eeb-c0ea-48aa-b9f4-7ffe7e8d9f1c/public_url' },
+        { issuer: 'MongoDB', name: 'Building RAG Apps Using MongoDB', url: 'https://www.credly.com/badges/691b0b40-26e5-440f-973f-680210020162/public_url' },
+        { issuer: 'Microsoft Learn', name: 'Operationalize Machine Learning Models (MLOps)', url: 'https://learn.microsoft.com/api/achievements/share/en-us/ismailourdou-5021/NQ857ZYF?sharingId=C81E0FA767C0DC5C' },
+      ],
+    },
     cv: {
       label: 'CV',
-      number: '06',
+      number: '07',
       title: 'Mon parcours, en un document.',
       subtitle: 'Retrouvez mon expérience, mes projets, ma formation et mes compétences.',
       download: 'Télécharger mon CV ↓',
@@ -371,7 +424,7 @@ export const content: Record<Language, Content> = {
     },
     contact: {
       label: 'CONTACT',
-      number: '07',
+      number: '08',
       title: 'Une idée à transformer en produit ?',
       titleEn: 'Have an idea worth building?',
       email: 'ismailourdou123@gmail.com',
@@ -412,6 +465,7 @@ export const content: Record<Language, Content> = {
       title: 'Projects, not just technologies.',
       titleEn: 'Des projets, pas seulement des technologies.',
       freelanceLabel: 'FREELANCE PROJECTS',
+      personalLabel: 'PERSONAL & AI PROJECTS',
       academicLabel: 'ACADEMIC PROJECTS',
       illustrativeLabel: 'Illustrative interface',
       projects: [
@@ -454,8 +508,33 @@ export const content: Record<Language, Content> = {
           url: 'https://ladybugtrading.com/',
         },
         {
+          id: 'odoo-mcp',
+          number: '04',
+          kind: 'personal',
+          category: 'Conversational AI · ERP · MCP',
+          name: 'Claude Odoo MCP',
+          subtitle: 'AI assistant for Odoo operations',
+          description:
+            'Built a Claude-connected MCP server for natural-language Odoo operations: creating invoices, partners, and products directly through the assistant.',
+          descriptionEn:
+            "Création d’un serveur MCP connecté à Claude pour gérer Odoo en langage naturel : création de factures, partenaires et produits depuis l’assistant.",
+          tech: ['Claude', 'MCP', 'Odoo'],
+        },
+        {
+          id: 'sportsbook',
+          number: '05',
+          kind: 'personal',
+          category: 'Web Application · Sport',
+          name: 'Sportsbook',
+          subtitle: 'Sports betting web application',
+          description: 'Designed and built a web application for sports betting.',
+          descriptionEn:
+            'Conception et développement d’une application web de paris sportifs.',
+          tech: ['Web Application', 'Sportsbook'],
+        },
+        {
           id: 'montana',
-          number: '07',
+          number: '09',
           kind: 'academic',
           category: 'Hotel Booking · Web',
           name: 'Montana',
@@ -466,7 +545,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'cabinet',
-          number: '08',
+          number: '10',
           kind: 'academic',
           category: 'Medical Practice · Web',
           name: 'Cabinet Management',
@@ -477,7 +556,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'e-sport',
-          number: '04',
+          number: '06',
           kind: 'academic',
           category: 'E-Commerce · AI · Forecasting',
           name: 'E-Sport',
@@ -491,7 +570,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'ai-resume',
-          number: '05',
+          number: '07',
           kind: 'academic',
           category: 'AI · Candidate Analysis',
           name: 'AI Resume Screening',
@@ -502,7 +581,7 @@ export const content: Record<Language, Content> = {
         },
         {
           id: 'redis-life',
-          number: '06',
+          number: '08',
           kind: 'academic',
           category: 'Distributed Systems · Simulation',
           name: 'Redis Game of Life',
@@ -571,12 +650,12 @@ export const content: Record<Language, Content> = {
         {
           key: 'ERP',
           label: 'ERP / Automation',
-          technologies: ['Odoo', 'n8n', 'REST APIs', 'Workflow Automation', 'OCR', 'Fuzzy Matching', 'ETL', 'Data Migration', 'Agile'],
+          technologies: ['Odoo', 'Claude MCP', 'n8n', 'REST APIs', 'Workflow Automation', 'OCR', 'Fuzzy Matching', 'ETL', 'Data Migration', 'Agile'],
         },
         {
           key: 'AI',
           label: 'AI / Data',
-          technologies: ['Python', 'RAG', 'NLP', 'PyTorch', 'TensorFlow', 'Power BI', 'Forecasting', 'Hadoop', 'Spark', 'Talend'],
+          technologies: ['Python', 'RAG', 'NLP', 'PyTorch', 'TensorFlow', 'Scikit-learn', 'NeuralProphet', 'OpenCV', 'OCR', 'Power BI', 'Forecasting', 'Hadoop', 'Spark', 'Talend'],
         },
         {
           key: 'WEB',
@@ -622,9 +701,22 @@ export const content: Record<Language, Content> = {
         },
       ],
     },
+    certifications: {
+      label: 'CERTIFICATIONS',
+      number: '06',
+      title: 'Learn, apply, deepen.',
+      titleEn: 'Apprendre, appliquer, approfondir.',
+      verify: 'View credential',
+      items: [
+        { issuer: 'Chainguard', name: 'AI Threat Tamer', url: 'https://www.credly.com/badges/ffe9287f-7ca6-4188-a27c-8e68566f55d2/public_url' },
+        { issuer: 'MongoDB', name: 'Deploying and Evaluating GenAI Apps with MongoDB', url: 'https://www.credly.com/badges/d0583eeb-c0ea-48aa-b9f4-7ffe7e8d9f1c/public_url' },
+        { issuer: 'MongoDB', name: 'Building RAG Apps Using MongoDB', url: 'https://www.credly.com/badges/691b0b40-26e5-440f-973f-680210020162/public_url' },
+        { issuer: 'Microsoft Learn', name: 'Operationalize Machine Learning Models (MLOps)', url: 'https://learn.microsoft.com/api/achievements/share/en-us/ismailourdou-5021/NQ857ZYF?sharingId=C81E0FA767C0DC5C' },
+      ],
+    },
     cv: {
       label: 'CV',
-      number: '06',
+      number: '07',
       title: 'My journey, in one document.',
       subtitle: 'Find my experience, projects, education and skills.',
       download: 'Download my CV',
@@ -632,7 +724,7 @@ export const content: Record<Language, Content> = {
     },
     contact: {
       label: 'CONTACT',
-      number: '07',
+      number: '08',
       title: 'Have an idea worth building?',
       titleEn: 'Une idée à transformer en produit ?',
       email: 'ismailourdou123@gmail.com',

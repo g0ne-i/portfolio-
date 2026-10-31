@@ -157,6 +157,7 @@ export default function SelectedWork() {
   const { t } = useLanguage();
   const projects = t.work.projects;
   const freelanceProjects = projects.filter((project) => project.kind === 'freelance');
+  const personalProjects = projects.filter((project) => project.kind === 'personal');
   const academicOrder = ['e-sport', 'ai-resume', 'redis-life', 'montana', 'cabinet'];
   const academicProjects = projects
     .filter((project) => project.kind === 'academic')
@@ -192,6 +193,18 @@ export default function SelectedWork() {
                 </article>
               );
             })}
+          </div>
+        </div>
+
+        <div className="mt-28 lg:mt-44">
+          <GroupHeading number="04–05">{t.work.personalLabel}</GroupHeading>
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
+            {personalProjects.map((project) => (
+              <article key={project.id} id={`project-${project.id}`} className="flex scroll-mt-24 flex-col rounded-[24px] border border-soft bg-white p-4 shadow-[0_24px_60px_-48px_rgba(15,23,42,0.45)] sm:p-5">
+                <ProjectVisual projectId={project.id} compact />
+                <div className="mt-7 flex-1"><ProjectCopy project={project} /></div>
+              </article>
+            ))}
           </div>
         </div>
 

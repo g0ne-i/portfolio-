@@ -35,7 +35,7 @@ const personJsonLd = {
     '@type': 'CollegeOrUniversity',
     name: 'Higher School of Technology of Salé',
   },
-  knowsAbout: ['Software Development', 'Artificial Intelligence', 'RAG', 'Odoo', 'Automation', 'Data Engineering', 'Power BI', 'React Native', 'GCP'],
+  knowsAbout: ['Software Development', 'Artificial Intelligence', 'RAG', 'Claude MCP', 'Odoo', 'Automation', 'OCR', 'MLOps', 'Data Engineering', 'Power BI', 'GCP'],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Rabat',
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'Ismail Ourdou — Junior Software & AI Developer',
   description:
-    'Portfolio of Ismail Ourdou, a junior software and AI developer specializing in RAG, Odoo, automation, data engineering, and full-stack web and mobile development.',
-  keywords: ['Ismail Ourdou', 'Software Developer', 'AI Developer', 'RAG', 'Odoo', 'Automation', 'Data Engineering', 'Next.js', 'React Native', 'Power BI', 'GCP', 'Rabat'],
+    'Portfolio of Ismail Ourdou, a junior software and AI developer specializing in Claude MCP, RAG, Odoo automation, OCR, data engineering, and full-stack development.',
+  keywords: ['Ismail Ourdou', 'Software Developer', 'AI Developer', 'Claude MCP', 'RAG', 'Odoo', 'Automation', 'OCR', 'Data Engineering', 'Next.js', 'Power BI', 'GCP', 'Rabat'],
   openGraph: {
     title: 'Ismail Ourdou — Junior Software & AI Developer',
     description:

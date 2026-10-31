@@ -4,6 +4,7 @@ import SelectedWork from '@/components/sections/selected-work';
 import Experience from '@/components/sections/experience';
 import About from '@/components/sections/about';
 import TechnicalStack from '@/components/sections/technical-stack';
+import Certifications from '@/components/sections/certifications';
 import CVSection from '@/components/sections/cv-section';
 import Contact from '@/components/sections/contact';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Experience />
       <About />
       <TechnicalStack />
+      <Certifications />
       <CVSection />
       <Contact />
     </main>
