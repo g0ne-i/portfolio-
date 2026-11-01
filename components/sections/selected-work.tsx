@@ -1,21 +1,25 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/components/providers/language-provider';
 import { PROJECT_UIS } from '@/components/sections/project-uis';
+import { withBasePath } from '@/lib/paths';
 
 type Project = ReturnType<typeof useLanguage>['t']['work']['projects'][number];
 
 function ProjectVisual({
   projectId,
   projectUrl,
+  projectImage,
   projectName,
   compact = false,
 }: {
   projectId: string;
   projectUrl?: string;
+  projectImage?: string;
   projectName?: string;
   compact?: boolean;
 }) {
@@ -29,7 +33,7 @@ function ProjectVisual({
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.96, 1, 0.98]);
   const y = useTransform(scrollYProgress, [0, 0.5, 1], [compact ? 24 : 50, 0, -18]);
   const UIComponent = PROJECT_UIS[projectId];
-  const isIllustrative = !projectUrl;
+  const isIllustrative = !projectUrl && !projectImage;
   const needsLightBackdrop = projectId === 'documind' || projectId === 'callmegrowth';
 
   const handleMouseMove = (event: React.MouseEvent) => {
@@ -50,7 +54,15 @@ function ProjectVisual({
       <div className={`absolute inset-x-5 inset-y-2 translate-y-6 rounded-[28px] blur-3xl ${needsLightBackdrop ? 'bg-sky-200/70' : 'bg-clean-blue/10'}`} />
       {needsLightBackdrop ? <div className="absolute -inset-3 rounded-[28px] bg-soft-blue shadow-[0_24px_65px_-35px_rgba(37,99,235,0.75)]" /> : null}
       <div className="relative h-full w-full overflow-hidden rounded-[20px] border border-soft bg-white shadow-[0_30px_80px_-42px_rgba(37,99,235,0.45)]">
-        {UIComponent ? <UIComponent /> : null}
+        {projectImage ? (
+          <Image
+            src={withBasePath(projectImage)}
+            alt={projectName ?? projectId}
+            fill
+            sizes={compact ? '(max-width: 768px) 100vw, 50vw' : '(max-width: 1024px) 100vw, 60vw'}
+            className="object-cover object-top"
+          />
+        ) : UIComponent ? <UIComponent /> : null}
         {isIllustrative ? (
           <span data-illustrative-label className="absolute right-3 top-3 rounded-full border border-clean-blue/20 bg-white/95 px-3 py-1.5 text-sm font-medium text-clean-blue shadow-sm backdrop-blur">
             {t.work.illustrativeLabel}
@@ -189,7 +201,7 @@ export default function SelectedWork() {
               return (
                 <article key={project.id} id={`project-${project.id}`} className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-12 lg:gap-14">
                   <div className={`order-2 lg:col-span-5 ${index % 2 ? 'lg:order-2' : 'lg:order-1'}`}><ProjectCopy project={project} prominent /></div>
-                  <div className={`order-1 lg:col-span-7 ${index % 2 ? 'lg:order-1' : 'lg:order-2'}`}><ProjectVisual projectId={project.id} projectUrl={project.url} projectName={project.name} /></div>
+                  <div className={`order-1 lg:col-span-7 ${index % 2 ? 'lg:order-1' : 'lg:order-2'}`}><ProjectVisual projectId={project.id} projectUrl={project.url} projectImage={project.image} projectName={project.name} /></div>
                 </article>
               );
             })}
@@ -201,7 +213,7 @@ export default function SelectedWork() {
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
             {personalProjects.map((project) => (
               <article key={project.id} id={`project-${project.id}`} className="flex scroll-mt-24 flex-col rounded-[24px] border border-soft bg-white p-4 shadow-[0_24px_60px_-48px_rgba(15,23,42,0.45)] sm:p-5">
-                <ProjectVisual projectId={project.id} compact />
+                <ProjectVisual projectId={project.id} projectImage={project.image} projectName={project.name} compact />
                 <div className="mt-7 flex-1"><ProjectCopy project={project} /></div>
               </article>
             ))}
@@ -215,7 +227,7 @@ export default function SelectedWork() {
               const desktopPosition = index === 3 ? 'xl:col-start-2' : index === 4 ? 'xl:col-start-4' : '';
               return (
                 <article key={project.id} id={`project-${project.id}`} className={`flex h-full scroll-mt-24 flex-col rounded-[24px] border border-soft bg-white p-4 shadow-[0_24px_60px_-48px_rgba(15,23,42,0.45)] sm:p-5 md:col-span-1 xl:col-span-2 ${desktopPosition}`}>
-                  <ProjectVisual projectId={project.id} compact />
+                  <ProjectVisual projectId={project.id} projectImage={project.image} projectName={project.name} compact />
                   <div className="mt-7 flex-1"><ProjectCopy project={project} /></div>
                 </article>
               );

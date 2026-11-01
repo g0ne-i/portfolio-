@@ -41,6 +41,7 @@ export type Content = {
       tech: string[];
       features?: string[];
       url?: string;
+      image?: string;
     }[];
   };
   certifications: {
@@ -231,6 +232,7 @@ export const content: Record<Language, Content> = {
           descriptionEn:
             'Built a sports-field reservation platform combining an Angular single-page application, a Symfony API, PostgreSQL, Redis-backed sessions, Nginx, Brevo transactional email, Infobip SMS, and ChariPay hosted payments.',
           tech: ['Angular', 'Symfony', 'PostgreSQL', 'Redis', 'Nginx', 'Brevo', 'Infobip', 'ChariPay'],
+          image: '/images/projects/sportbook.png',
         },
         {
           id: 'montana',
@@ -532,6 +534,7 @@ export const content: Record<Language, Content> = {
           descriptionEn:
             "Développement d’une plateforme de réservation de terrains de sport combinant une application monopage Angular, une API Symfony, PostgreSQL, des sessions Redis, Nginx, les e-mails transactionnels Brevo, les SMS Infobip et les paiements hébergés ChariPay.",
           tech: ['Angular', 'Symfony', 'PostgreSQL', 'Redis', 'Nginx', 'Brevo', 'Infobip', 'ChariPay'],
+          image: '/images/projects/sportbook.png',
         },
         {
           id: 'montana',
