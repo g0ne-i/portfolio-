@@ -50,9 +50,11 @@ export type Content = {
     title: string;
     titleEn: string;
     verify: string;
+    verified: string;
     items: {
       issuer: string;
       name: string;
+      category: string;
       url: string;
     }[];
   };
@@ -406,14 +408,18 @@ export const content: Record<Language, Content> = {
     certifications: {
       label: 'CERTIFICATIONS',
       number: '06',
-      title: 'Apprendre, appliquer, approfondir.',
+      title: 'Des compétences validées, pas seulement listées.',
       titleEn: 'Learn, apply, deepen.',
-      verify: 'Voir le certificat',
+      verify: 'Vérifier le certificat',
+      verified: 'Certificat vérifié',
       items: [
-        { issuer: 'Chainguard', name: 'AI Threat Tamer', url: 'https://www.credly.com/badges/ffe9287f-7ca6-4188-a27c-8e68566f55d2/public_url' },
-        { issuer: 'MongoDB', name: 'Deploying and Evaluating GenAI Apps with MongoDB', url: 'https://www.credly.com/badges/d0583eeb-c0ea-48aa-b9f4-7ffe7e8d9f1c/public_url' },
-        { issuer: 'MongoDB', name: 'Building RAG Apps Using MongoDB', url: 'https://www.credly.com/badges/691b0b40-26e5-440f-973f-680210020162/public_url' },
-        { issuer: 'Microsoft Learn', name: 'Operationalize Machine Learning Models (MLOps)', url: 'https://learn.microsoft.com/api/achievements/share/en-us/ismailourdou-5021/NQ857ZYF?sharingId=C81E0FA767C0DC5C' },
+        { issuer: 'Anthropic', name: 'Claude Academy Certificate', category: 'IA générative · Claude', url: 'https://academy.claude.com/verify/7e68110a66640ed4b118764a31c0c101' },
+        { issuer: 'LangChain', name: 'LangChain Academy Certificate', category: 'Agents IA · LangChain', url: 'https://academy.langchain.com/certificates/basd5vbgmu' },
+        { issuer: 'EF SET', name: 'Certificat d’anglais — C1 avancé (69/100)', category: 'Anglais professionnel', url: 'https://cert.efset.org/en/jr79Te' },
+        { issuer: 'Chainguard', name: 'AI Threat Tamer', category: 'Sécurité IA', url: 'https://www.credly.com/badges/ffe9287f-7ca6-4188-a27c-8e68566f55d2/public_url' },
+        { issuer: 'MongoDB', name: 'Deploying and Evaluating GenAI Apps with MongoDB', category: 'IA générative · Données', url: 'https://www.credly.com/badges/d0583eeb-c0ea-48aa-b9f4-7ffe7e8d9f1c/public_url' },
+        { issuer: 'MongoDB', name: 'Building RAG Apps Using MongoDB', category: 'RAG · Bases vectorielles', url: 'https://www.credly.com/badges/691b0b40-26e5-440f-973f-680210020162/public_url' },
+        { issuer: 'Microsoft Learn', name: 'Operationalize Machine Learning Models (MLOps)', category: 'MLOps', url: 'https://learn.microsoft.com/api/achievements/share/en-us/ismailourdou-5021/NQ857ZYF?sharingId=C81E0FA767C0DC5C' },
       ],
     },
     cv: {
@@ -708,14 +714,18 @@ export const content: Record<Language, Content> = {
     certifications: {
       label: 'CERTIFICATIONS',
       number: '06',
-      title: 'Learn, apply, deepen.',
+      title: 'Skills verified, not simply listed.',
       titleEn: 'Apprendre, appliquer, approfondir.',
       verify: 'View credential',
+      verified: 'Verified credential',
       items: [
-        { issuer: 'Chainguard', name: 'AI Threat Tamer', url: 'https://www.credly.com/badges/ffe9287f-7ca6-4188-a27c-8e68566f55d2/public_url' },
-        { issuer: 'MongoDB', name: 'Deploying and Evaluating GenAI Apps with MongoDB', url: 'https://www.credly.com/badges/d0583eeb-c0ea-48aa-b9f4-7ffe7e8d9f1c/public_url' },
-        { issuer: 'MongoDB', name: 'Building RAG Apps Using MongoDB', url: 'https://www.credly.com/badges/691b0b40-26e5-440f-973f-680210020162/public_url' },
-        { issuer: 'Microsoft Learn', name: 'Operationalize Machine Learning Models (MLOps)', url: 'https://learn.microsoft.com/api/achievements/share/en-us/ismailourdou-5021/NQ857ZYF?sharingId=C81E0FA767C0DC5C' },
+        { issuer: 'Anthropic', name: 'Claude Academy Certificate', category: 'Generative AI · Claude', url: 'https://academy.claude.com/verify/7e68110a66640ed4b118764a31c0c101' },
+        { issuer: 'LangChain', name: 'LangChain Academy Certificate', category: 'AI Agents · LangChain', url: 'https://academy.langchain.com/certificates/basd5vbgmu' },
+        { issuer: 'EF SET', name: 'English Certificate — C1 Advanced (69/100)', category: 'Professional English', url: 'https://cert.efset.org/en/jr79Te' },
+        { issuer: 'Chainguard', name: 'AI Threat Tamer', category: 'AI Security', url: 'https://www.credly.com/badges/ffe9287f-7ca6-4188-a27c-8e68566f55d2/public_url' },
+        { issuer: 'MongoDB', name: 'Deploying and Evaluating GenAI Apps with MongoDB', category: 'Generative AI · Data', url: 'https://www.credly.com/badges/d0583eeb-c0ea-48aa-b9f4-7ffe7e8d9f1c/public_url' },
+        { issuer: 'MongoDB', name: 'Building RAG Apps Using MongoDB', category: 'RAG · Vector Databases', url: 'https://www.credly.com/badges/691b0b40-26e5-440f-973f-680210020162/public_url' },
+        { issuer: 'Microsoft Learn', name: 'Operationalize Machine Learning Models (MLOps)', category: 'MLOps', url: 'https://learn.microsoft.com/api/achievements/share/en-us/ismailourdou-5021/NQ857ZYF?sharingId=C81E0FA767C0DC5C' },
       ],
     },
     cv: {
