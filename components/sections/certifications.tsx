@@ -75,7 +75,10 @@ function CertificateCard({
             transition={{ duration: 0.22 }}
             className="overflow-hidden"
           >
-            <ul className="mt-4 space-y-2 border-t border-soft pt-4">
+            <div className="mt-4 border-t border-soft pt-4">
+              <p className="text-sm leading-relaxed text-slate">{certificate.description}</p>
+            </div>
+            <ul className="mt-4 space-y-2 rounded-xl bg-soft-blue/55 p-4">
               {certificate.learned.map((skill) => (
                 <li key={skill} className="flex items-start gap-2 text-sm leading-snug text-slate">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-clean-blue" />
