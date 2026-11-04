@@ -362,7 +362,7 @@ export const content: Record<Language, Content> = {
         {
           key: 'IA',
           label: 'IA / Données',
-          technologies: ['Python', 'RAG', 'NLP', 'PyTorch', 'TensorFlow', 'Scikit-learn', 'NeuralProphet', 'OpenCV', 'OCR', 'Power BI', 'Prévision', 'Hadoop', 'Spark', 'Talend'],
+          technologies: ['Python', 'RAG', 'LangChain', 'LangGraph', 'NLP', 'PyTorch', 'TensorFlow', 'Scikit-learn', 'NeuralProphet', 'OpenCV', 'OCR', 'Power BI', 'Prévision', 'Hadoop', 'Spark', 'Talend'],
         },
         {
           key: 'WEB',
@@ -669,7 +669,7 @@ export const content: Record<Language, Content> = {
         {
           key: 'AI',
           label: 'AI / Data',
-          technologies: ['Python', 'RAG', 'NLP', 'PyTorch', 'TensorFlow', 'Scikit-learn', 'NeuralProphet', 'OpenCV', 'OCR', 'Power BI', 'Forecasting', 'Hadoop', 'Spark', 'Talend'],
+          technologies: ['Python', 'RAG', 'LangChain', 'LangGraph', 'NLP', 'PyTorch', 'TensorFlow', 'Scikit-learn', 'NeuralProphet', 'OpenCV', 'OCR', 'Power BI', 'Forecasting', 'Hadoop', 'Spark', 'Talend'],
         },
         {
           key: 'WEB',
