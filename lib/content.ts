@@ -4,7 +4,13 @@ export type Content = {
   nav: {
     name: string;
     subtitle: string;
-    links: { work: string; experience: string; stack: string; about: string };
+    links: {
+      work: string;
+      experience: string;
+      profile: string;
+      ecosystem: string;
+      certifications: string;
+    };
     talk: string;
   };
   hero: {
@@ -142,7 +148,7 @@ export const content: Record<Language, Content> = {
     nav: {
       name: 'ISMAIL OURDOU',
       subtitle: 'LOGICIEL · IA · FULL-STACK',
-      links: { work: 'Projets', experience: 'Expérience', stack: 'Technologies', about: 'À propos' },
+      links: { work: 'Projets', experience: 'Expérience', profile: 'Profil', ecosystem: 'Écosystème', certifications: 'Certifications' },
       talk: "Discutons ↗",
     },
     hero: {
@@ -454,7 +460,7 @@ export const content: Record<Language, Content> = {
     nav: {
       name: 'ISMAIL OURDOU',
       subtitle: 'SOFTWARE · AI · FULL-STACK',
-      links: { work: 'Work', experience: 'Experience', stack: 'Stack', about: 'About' },
+      links: { work: 'Work', experience: 'Experience', profile: 'Profile', ecosystem: 'Ecosystem', certifications: 'Certifications' },
       talk: "Let's talk ↗",
     },
     hero: {

@@ -19,8 +19,9 @@ export default function Navigation() {
   const navLinks = [
     { label: t.nav.links.work, href: '#work' },
     { label: t.nav.links.experience, href: '#experience' },
-    { label: t.nav.links.stack, href: '#stack' },
-    { label: t.nav.links.about, href: '#about' },
+    { label: t.nav.links.profile, href: '#about' },
+    { label: t.nav.links.ecosystem, href: '#stack' },
+    { label: t.nav.links.certifications, href: '#certifications' },
   ];
   const mobileLinks = [
     ...navLinks,
@@ -116,7 +117,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 right-0 top-[60px] z-40 border-b border-soft bg-white/95 backdrop-blur-xl lg:hidden"
+            className="fixed left-0 right-0 top-[60px] z-40 max-h-[calc(100dvh-60px)] overflow-y-auto border-b border-soft bg-white shadow-[0_20px_45px_-28px_rgba(15,23,42,0.35)] lg:hidden"
           >
             <div id="mobile-navigation" className="flex flex-col gap-1 px-6 py-4">
               {mobileLinks.map((link) => (

@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="grain relative min-h-screen w-full overflow-hidden bg-white">
+    <section id="hero" className="grain relative w-full overflow-hidden bg-white">
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
@@ -32,8 +32,8 @@ export default function Hero() {
         className="absolute inset-x-0 top-0 z-10 h-px origin-left bg-gradient-to-r from-transparent via-clean-blue to-transparent"
       />
 
-      <div className="relative mx-auto max-w-[1680px] px-4 pb-20 pt-24 sm:px-6 sm:pt-28 lg:px-10 lg:pt-32 2xl:px-12">
-        <div className="grid min-h-[calc(100vh-180px)] items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8 2xl:gap-14">
+      <div className="relative mx-auto max-w-[1920px] px-4 pb-16 pt-24 sm:px-6 sm:pt-28 lg:px-10 lg:pb-20 lg:pt-28 2xl:px-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8 2xl:gap-14">
           <div className="order-2 flex flex-col gap-6 lg:order-1 lg:gap-7">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
