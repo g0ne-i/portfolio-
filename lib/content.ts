@@ -4,7 +4,14 @@ export type Content = {
   nav: {
     name: string;
     subtitle: string;
-    links: { work: string; experience: string; stack: string; about: string };
+    links: {
+      work: string;
+      experience: string;
+      profile: string;
+      ecosystem: string;
+      credentials: string;
+      cv: string;
+    };
     talk: string;
   };
   hero: {
@@ -142,7 +149,7 @@ export const content: Record<Language, Content> = {
     nav: {
       name: 'ISMAIL OURDOU',
       subtitle: 'LOGICIEL · IA · FULL-STACK',
-      links: { work: 'Projets', experience: 'Expérience', stack: 'Technologies', about: 'À propos' },
+      links: { work: 'Projets', experience: 'Expérience', profile: 'Profil', ecosystem: 'Écosystème', credentials: 'Certifications', cv: 'CV' },
       talk: "Discutons ↗",
     },
     hero: {
@@ -230,7 +237,7 @@ export const content: Record<Language, Content> = {
           number: '05',
           kind: 'personal',
           category: 'Application web · Réservation sportive',
-          name: 'SportRéserver',
+          name: 'SportBook',
           subtitle: 'Plateforme de réservation de terrains',
           description:
             "Développement d’une plateforme de réservation de terrains de sport combinant une application monopage Angular, une API Symfony, PostgreSQL, des sessions Redis, Nginx, les e-mails transactionnels Brevo, les SMS Infobip et les paiements hébergés ChariPay.",
@@ -419,6 +426,7 @@ export const content: Record<Language, Content> = {
       items: [
         { issuer: 'Anthropic', name: 'Claude Academy Certificate', category: 'IA générative · Claude', description: 'Validation d’une utilisation structurée et responsable de Claude pour formuler des demandes efficaces, organiser le contexte et exploiter ses outils dans des tâches concrètes.', learned: ['Prompting efficace', 'Projets et compétences Claude', 'Outils et connecteurs'], url: 'https://academy.claude.com/verify/7e68110a66640ed4b118764a31c0c101' },
         { issuer: 'LangChain', name: 'LangChain Academy Certificate', category: 'Agents IA · LangChain', description: 'Formation à la conception d’applications et d’agents propulsés par des LLM, avec orchestration des outils, récupération de contexte et suivi des exécutions.', learned: ['Conception de workflows agents', 'Outils et récupération', 'Observabilité LangSmith'], url: 'https://academy.langchain.com/certificates/basd5vbgmu' },
+        { issuer: 'LangChain', name: 'LangSmith Essentials', category: 'Observabilité · Évaluation · Agents', description: 'Maîtrise des fondamentaux de LangSmith sur l’ensemble du cycle de vie d’un agent : traçage et débogage, tests avant production, déploiement, monitoring et amélioration continue.', learned: ['Traçage et débogage des agents', 'Datasets, expériences et évaluations hors ligne', 'Monitoring, évaluateurs en ligne et tableaux de bord'], url: 'https://academy.langchain.com/certificates/hb7vblay0i' },
         { issuer: 'EF SET', name: 'Certificat d’anglais — C1 avancé (69/100)', category: 'Anglais professionnel', description: 'Certification standardisée attestant un niveau C1 avancé du CECRL, adapté aux échanges professionnels, à la documentation technique et au travail international.', learned: ['Compréhension écrite avancée', 'Compréhension orale avancée', 'Communication professionnelle fluide'], url: 'https://cert.efset.org/en/jr79Te' },
         { issuer: 'Chainguard', name: 'AI Threat Tamer', category: 'Sécurité IA', description: 'Introduction aux risques propres aux agents et aux outils de développement assistés par IA, ainsi qu’aux pratiques d’isolation, de provenance et de réduction de la surface d’attaque.', learned: ['Menaces de l’ingénierie agentique', 'Isolation et provenance', 'Développement IA sécurisé'], url: 'https://www.credly.com/badges/ffe9287f-7ca6-4188-a27c-8e68566f55d2/public_url' },
         { issuer: 'MongoDB', name: 'Deploying and Evaluating GenAI Apps with MongoDB', category: 'IA générative · Données', description: 'Approfondissement du passage d’un prototype GenAI à une application déployée, avec optimisation du découpage, mesure de la qualité et choix d’architecture de production.', learned: ['Stratégies de découpage', 'Évaluation de la qualité', 'Déploiement du prototype à la production'], url: 'https://www.credly.com/badges/d0583eeb-c0ea-48aa-b9f4-7ffe7e8d9f1c/public_url' },
@@ -453,7 +461,7 @@ export const content: Record<Language, Content> = {
     nav: {
       name: 'ISMAIL OURDOU',
       subtitle: 'SOFTWARE · AI · FULL-STACK',
-      links: { work: 'Work', experience: 'Experience', stack: 'Stack', about: 'About' },
+      links: { work: 'Work', experience: 'Experience', profile: 'Profile', ecosystem: 'Ecosystem', credentials: 'Credentials', cv: 'CV' },
       talk: "Let's talk ↗",
     },
     hero: {
@@ -537,7 +545,7 @@ export const content: Record<Language, Content> = {
           number: '05',
           kind: 'personal',
           category: 'Web Application · Sports Booking',
-          name: 'SportRéserver',
+          name: 'SportBook',
           subtitle: 'Sports-field reservation platform',
           description:
             'Built a sports-field reservation platform combining an Angular single-page application, a Symfony API, PostgreSQL, Redis-backed sessions, Nginx, Brevo transactional email, Infobip SMS, and ChariPay hosted payments.',
@@ -726,6 +734,7 @@ export const content: Record<Language, Content> = {
       items: [
         { issuer: 'Anthropic', name: 'Claude Academy Certificate', category: 'Generative AI · Claude', description: 'Validated a structured and responsible approach to using Claude: writing effective instructions, organizing context, and applying its tools to practical tasks.', learned: ['Effective prompting', 'Claude projects and skills', 'Tools and connector workflows'], url: 'https://academy.claude.com/verify/7e68110a66640ed4b118764a31c0c101' },
         { issuer: 'LangChain', name: 'LangChain Academy Certificate', category: 'AI Agents · LangChain', description: 'Covered the design of LLM applications and agents, including tool orchestration, contextual retrieval, and execution tracing for reliable workflows.', learned: ['Agent workflow design', 'Tools and retrieval', 'LangSmith observability'], url: 'https://academy.langchain.com/certificates/basd5vbgmu' },
+        { issuer: 'LangChain', name: 'LangSmith Essentials', category: 'Observability · Evaluation · Agents', description: 'Covered the LangSmith fundamentals across the agent lifecycle: tracing and debugging, pre-production testing, deployment, production monitoring, and continuous improvement.', learned: ['Agent tracing and debugging', 'Datasets, experiments, and offline evaluations', 'Online evaluators, monitoring, and dashboards'], url: 'https://academy.langchain.com/certificates/hb7vblay0i' },
         { issuer: 'EF SET', name: 'English Certificate — C1 Advanced (69/100)', category: 'Professional English', description: 'A standardized assessment confirming CEFR C1 Advanced English for professional communication, technical documentation, and international collaboration.', learned: ['Advanced reading comprehension', 'Advanced listening comprehension', 'Fluent workplace communication'], url: 'https://cert.efset.org/en/jr79Te' },
         { issuer: 'Chainguard', name: 'AI Threat Tamer', category: 'AI Security', description: 'Covered security risks introduced by AI agents and coding tools, together with isolation, provenance, and attack-surface reduction practices for safer development.', learned: ['Agentic engineering threats', 'Isolation and provenance', 'Secure AI development'], url: 'https://www.credly.com/badges/ffe9287f-7ca6-4188-a27c-8e68566f55d2/public_url' },
         { issuer: 'MongoDB', name: 'Deploying and Evaluating GenAI Apps with MongoDB', category: 'Generative AI · Data', description: 'Explored how to move a GenAI prototype toward production by improving chunking, measuring output quality, and selecting suitable deployment patterns.', learned: ['Chunking strategies', 'Quality evaluation', 'Prototype-to-production deployment'], url: 'https://www.credly.com/badges/d0583eeb-c0ea-48aa-b9f4-7ffe7e8d9f1c/public_url' },

@@ -238,7 +238,7 @@ function Scene({
   });
 
   return (
-    <group ref={groupRef}>
+    <group ref={groupRef} scale={isMobile ? 0.68 : 1}>
       {NODES.map((node, i) => (
         <NetworkNode key={node.label} data={node} index={i} mouse={mouse} isMobile={isMobile} reducedMotion={reducedMotion} lang={lang} />
       ))}
@@ -278,7 +278,7 @@ export default function HeroNetwork({ isMobile = false, lang = 'fr' }: { isMobil
   return (
     <div ref={ref} className="h-full w-full" role="img" aria-label={accessibleLabel}>
       <Canvas
-        camera={{ position: [0, 0, isMobile ? 8.6 : 6.6], fov: 45 }}
+        camera={{ position: [0, 0, isMobile ? 8.9 : 6.6], fov: 45 }}
         dpr={[1, isMobile ? 1.5 : 2]}
         frameloop={isVisible ? 'always' : 'never'}
         gl={{ antialias: true, alpha: true }}

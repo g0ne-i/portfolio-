@@ -192,7 +192,7 @@ export function SportsbookUI() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_25%,rgba(142,184,71,0.4),transparent_27%),radial-gradient(circle_at_78%_22%,rgba(7,87,57,0.65),transparent_42%),linear-gradient(110deg,#113b2c,#0b1615_56%,#153828)]" />
       <div className="relative bg-[#063b2a] py-1 text-center text-[7px] font-semibold text-[#d7ff54]">{lang === 'fr' ? 'Trouvez votre terrain. Vivez votre moment.' : 'Find your field. Live the moment.'}</div>
       <div className="relative flex items-center justify-between border-b border-white/10 bg-[#141619] px-4 py-3">
-        <div className="flex items-center gap-2 text-xs font-semibold"><span className="grid h-5 w-5 place-items-center rounded-md bg-[#caff46] text-[10px] text-[#103d2f]">S</span> SportRéserver</div>
+        <div className="flex items-center gap-2 text-xs font-semibold"><span className="grid h-5 w-5 place-items-center rounded-md bg-[#caff46] text-[10px] text-[#103d2f]">S</span> SportBook</div>
         <div className="hidden gap-4 text-[8px] text-white/65 sm:flex"><span>{lang === 'fr' ? 'Découvrir les terrains' : 'Discover fields'}</span><span>Sports</span><span>{lang === 'fr' ? 'Tournois' : 'Tournaments'}</span></div>
         <span className="rounded-md bg-[#caff46] px-2.5 py-1.5 text-[8px] font-semibold text-[#123526]">{lang === 'fr' ? 'Rejoindre' : 'Join'}</span>
       </div>
@@ -217,7 +217,7 @@ export function SportsbookUI() {
     </div>
   );
 
-  /* Legacy betting mockup, superseded by the SportRéserver booking interface above.
+  /* Legacy betting mockup, superseded by the SportBook booking interface above.
   const matches = [
     { teams: 'Rabat FC  ·  Casablanca', odds: ['1.82', '3.40', '4.10'] },
     { teams: 'Lions  ·  Atlas', odds: ['2.15', '3.10', '3.25'] },

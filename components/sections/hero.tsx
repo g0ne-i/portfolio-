@@ -32,9 +32,9 @@ export default function Hero() {
         className="absolute inset-x-0 top-0 z-10 h-px origin-left bg-gradient-to-r from-transparent via-clean-blue to-transparent"
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 pb-20 pt-28 lg:px-10 lg:pt-32">
-        <div className="grid min-h-[calc(100vh-180px)] items-center gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-4">
-          <div className="flex flex-col gap-6 lg:gap-7">
+      <div className="relative mx-auto max-w-[1680px] px-4 pb-20 pt-24 sm:px-6 sm:pt-28 lg:px-10 lg:pt-32 2xl:px-12">
+        <div className="grid min-h-[calc(100vh-180px)] items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8 2xl:gap-14">
+          <div className="order-2 flex flex-col gap-6 lg:order-1 lg:gap-7">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-2xl text-balance text-4xl leading-[1.06] text-navy sm:text-5xl lg:text-[3.65rem] xl:text-[4.4rem]"
+              className="max-w-3xl text-balance text-4xl leading-[1.06] text-navy sm:text-5xl lg:text-[3.65rem] xl:text-[4.5rem] 2xl:text-[5rem]"
             >
               {t.hero.headlinePrefix}{' '}
               <span className="font-serif-display italic text-clean-blue">{t.hero.headlineComplexity}</span>{' '}
@@ -96,9 +96,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.38, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-[480px] w-full sm:h-[600px] lg:h-[700px] xl:h-[760px]"
+            className="relative order-1 h-[390px] w-full sm:h-[520px] lg:order-2 lg:h-[640px] xl:h-[700px] 2xl:h-[740px]"
           >
-            <div className="absolute inset-0 overflow-hidden rounded-[2rem] border border-clean-blue/10 bg-gradient-to-br from-white via-soft-blue/45 to-white shadow-[0_45px_100px_-60px_rgba(37,99,235,0.6)]">
+            <div className="absolute inset-0 overflow-hidden rounded-[1.5rem] border border-clean-blue/10 bg-gradient-to-br from-white via-soft-blue/45 to-white shadow-[0_45px_100px_-60px_rgba(37,99,235,0.6)] sm:rounded-[2rem]">
               <HeroNetwork isMobile={isMobile} lang={lang} />
             </div>
           </motion.div>
