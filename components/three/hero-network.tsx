@@ -122,16 +122,16 @@ function NetworkNode({
       {isCenter ? (
         <Html
           center
-          distanceFactor={isMobile ? 10 : 8}
+          distanceFactor={isMobile ? 7 : 8}
           position={[0, 0, radius + 0.08]}
           style={{ pointerEvents: 'none' }}
         >
-          <div className="relative h-24 w-24 overflow-hidden rounded-full border-[3px] border-blue-700 bg-soft-blue shadow-[0_10px_32px_-12px_rgba(29,78,216,0.8)]">
+          <div className={`${isMobile ? 'h-20 w-20' : 'h-24 w-24'} relative overflow-hidden rounded-full border-[3px] border-blue-700 bg-soft-blue shadow-[0_10px_32px_-12px_rgba(29,78,216,0.8)]`}>
             <Image
               src={withBasePath('/images/ismail-ourdou.jpeg')}
               alt={lang === 'fr' ? 'Portrait d’Ismail Ourdou' : 'Portrait of Ismail Ourdou'}
               fill
-              sizes="96px"
+              sizes={isMobile ? '80px' : '96px'}
               className="object-cover object-center"
               priority
             />
@@ -141,8 +141,8 @@ function NetworkNode({
 
       <Html
         center
-        distanceFactor={isMobile ? 10 : 8}
-        position={[0, radius + 0.55, 0]}
+        distanceFactor={isMobile ? 7 : 8}
+        position={isCenter ? [0, isMobile ? 0.9 : radius + 0.55, 0] : [0, radius + 0.55, 0]}
         style={{
           pointerEvents: 'none',
           transition: 'opacity 0.3s ease',
@@ -228,6 +228,20 @@ function Scene({
   lang: 'fr' | 'en';
 }) {
   const groupRef = useRef<THREE.Group>(null);
+  const sceneNodes = useMemo<NodeData[]>(() => {
+    if (!isMobile) return NODES;
+
+    const mobilePositions: Record<string, [number, number, number]> = {
+      ERP: [-1.45, 1.15, -0.5],
+      AI: [1.45, 1.2, 0.3],
+      DATA: [-1.4, -0.75, 0.8],
+      AUTOMATION: [1.35, -0.65, -0.6],
+      WEB: [0, -1.65, 1.2],
+      ISMAIL: [0, 0, 0],
+    };
+
+    return NODES.map((node) => ({ ...node, position: mobilePositions[node.label] }));
+  }, [isMobile]);
 
   useFrame(() => {
     if (!groupRef.current) return;
@@ -238,15 +252,15 @@ function Scene({
   });
 
   return (
-    <group ref={groupRef} scale={isMobile ? 0.68 : 1}>
-      {NODES.map((node, i) => (
+    <group ref={groupRef}>
+      {sceneNodes.map((node, i) => (
         <NetworkNode key={node.label} data={node} index={i} mouse={mouse} isMobile={isMobile} reducedMotion={reducedMotion} lang={lang} />
       ))}
       {CONNECTIONS.map(([from, to], i) => (
         <ConnectionLine
           key={`line-${i}`}
-          start={NODES[from].position}
-          end={NODES[to].position}
+          start={sceneNodes[from].position}
+          end={sceneNodes[to].position}
           delay={600 + i * 120}
           index={i}
           reducedMotion={reducedMotion}
@@ -278,7 +292,7 @@ export default function HeroNetwork({ isMobile = false, lang = 'fr' }: { isMobil
   return (
     <div ref={ref} className="h-full w-full" role="img" aria-label={accessibleLabel}>
       <Canvas
-        camera={{ position: [0, 0, isMobile ? 8.9 : 6.6], fov: 45 }}
+        camera={{ position: [0, 0, isMobile ? 8.6 : 7.1], fov: 45 }}
         dpr={[1, isMobile ? 1.5 : 2]}
         frameloop={isVisible ? 'always' : 'never'}
         gl={{ antialias: true, alpha: true }}

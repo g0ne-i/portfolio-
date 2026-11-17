@@ -4,14 +4,7 @@ export type Content = {
   nav: {
     name: string;
     subtitle: string;
-    links: {
-      work: string;
-      experience: string;
-      profile: string;
-      ecosystem: string;
-      credentials: string;
-      cv: string;
-    };
+    links: { work: string; experience: string; stack: string; about: string };
     talk: string;
   };
   hero: {
@@ -149,7 +142,7 @@ export const content: Record<Language, Content> = {
     nav: {
       name: 'ISMAIL OURDOU',
       subtitle: 'LOGICIEL · IA · FULL-STACK',
-      links: { work: 'Projets', experience: 'Expérience', profile: 'Profil', ecosystem: 'Écosystème', credentials: 'Certifications', cv: 'CV' },
+      links: { work: 'Projets', experience: 'Expérience', stack: 'Technologies', about: 'À propos' },
       talk: "Discutons ↗",
     },
     hero: {
@@ -461,7 +454,7 @@ export const content: Record<Language, Content> = {
     nav: {
       name: 'ISMAIL OURDOU',
       subtitle: 'SOFTWARE · AI · FULL-STACK',
-      links: { work: 'Work', experience: 'Experience', profile: 'Profile', ecosystem: 'Ecosystem', credentials: 'Credentials', cv: 'CV' },
+      links: { work: 'Work', experience: 'Experience', stack: 'Stack', about: 'About' },
       talk: "Let's talk ↗",
     },
     hero: {
